@@ -1,0 +1,29 @@
+<h1><%= @company.name %></h1>
+
+<div>
+  <ul>
+    <li>
+      CNPJ: <%= @company.registration_number %>
+    </li>
+    <li>
+      CEP: <%= @company.postal_code %>
+    </li>
+    <li>
+      Endereço: <%= @company.address %>
+    </li>
+    <li>
+      Bairro: <%= @company.district %>
+    </li>
+    <li>
+      Cidade: <%= @company.city %>
+    </li>
+    <li>
+      Estado: <%= @company.state %>
+    </li>
+    <li>
+      Telefone: <%= @company.fone_number %>
+    </li>
+  </ul>
+</div>
+
+<%= link_to 'Editar', edit_company_path(@company.id) %>

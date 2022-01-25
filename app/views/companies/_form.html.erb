@@ -1,0 +1,43 @@
+<div>
+  <%= form_with model: @company do |f| %>
+    <div>
+      <%= f.label :name,'Razão Social' %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :fantasy_name,'Nome Fantasia' %>
+      <%= f.text_field :fantasy_name %>
+    </div>
+    <div>
+      <%= f.label :registration_number,'CNPJ' %>
+      <%= f.text_field :registration_number %>
+    </div>
+    <div>
+      <%= f.label :postal_code,'CEP' %>
+      <%= f.text_field :postal_code %>
+    </div>
+    <div>
+      <%= f.label :address,'Endereço' %>
+      <%= f.text_field :address %>
+    </div>
+    <div>
+      <%= f.label :district,'Bairro' %>
+      <%= f.text_field :district %>
+    </div>
+    <div>
+      <%= f.label :city, 'Cidade' %>
+      <%= f.text_field :city %>
+    </div>
+    <div>
+      <%= f.label :state, 'Estado' %>
+      <%= f.text_field :state %>
+    </div>
+    <div>
+      <%= f.label :fone_number, 'Telefone' %>
+      <%= f.text_field :fone_number %>
+    </div>
+    <div>
+      <%= f.submit 'Salvar' %>
+    </div>
+  <% end %>
+</div>

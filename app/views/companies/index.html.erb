@@ -1,0 +1,10 @@
+<h1>Lista de empresas</h1>
+<div>
+  <% if @companies.empty? %>
+    Nenhuma empresa cadastrada
+  <% else %>
+    <%= @companies.each do |c| %>
+      <%= link_to c.fantasy_name, c %> - <%= c.name %>
+    <% end %>
+  <% end %>
+</div>
