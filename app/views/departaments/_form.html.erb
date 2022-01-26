@@ -1,0 +1,13 @@
+<%= form_with model: @departament do |d| %>
+  <div>
+    <%= d.label :name, 'Nome' %>
+    <%= d.text_field :name %>
+  </div>
+  <div>
+    <%= d.label :company_id, 'Empresa' %>
+    <%= d.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
+  </div>
+  <div>
+    <%= d.submit 'Salvar' %>
+  </div>
+<% end %>

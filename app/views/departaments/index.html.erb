@@ -1,0 +1,15 @@
+<h1>Lista de departamentos:</h1>
+
+<div>
+  <ol>
+    <% if @departaments.empty? %>
+      Nenhum departamento cadastrado
+    <% else %>
+      <% @departaments.each do |d| %>
+        <div>
+          <li><%= d.company.fantasy_name %> - <%= d.name %></li>
+        </div>
+      <% end %>
+    <% end %>
+  </ol>
+</div>
