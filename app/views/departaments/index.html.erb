@@ -7,7 +7,7 @@
     <% else %>
       <% @departaments.each do |d| %>
         <div>
-          <li><%= d.company.fantasy_name %> - <%= d.name %></li>
+          <li><%= d.company.fantasy_name %> - <%= link_to d.name, d %></li>
         </div>
       <% end %>
     <% end %>

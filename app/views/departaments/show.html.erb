@@ -1,0 +1,9 @@
+<h1><%= @departament.name %></h1>
+
+<ul>
+  <li>
+    <%= @departament.company.name %>
+  </li>
+</ul>
+
+<%= link_to 'Editar', edit_departament_path(@departament.id) %>
