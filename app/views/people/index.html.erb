@@ -1,0 +1,15 @@
+<h1>Lista de pessoas:</h1>
+
+<div>
+  <ol>
+    <% if @people.empty? %>
+      Nenhuma pessoa cadastrada
+    <% else %>
+      <% @people.each do |p| %>
+        <div>
+          <li><%= p.company.fantasy_name %> | <%= p.departament.name %> | <%= link_to p.name, p %></li>
+        </div>
+      <% end %>
+    <% end %>
+  </ol>
+</div>
