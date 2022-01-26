@@ -1,0 +1,21 @@
+<%= form_with model: @person do |f| %>
+  <div>
+    <%= f.label :name, 'Nome' %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :company_id, 'Empresa' %>
+    <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name) %> %>
+  </div>
+  <div>
+    <%= f.label :departament_id, 'Departamento' %>
+    <%= f.collection_select(:departament_id, Departament.all, :id, :name) %> %>
+  </div>
+  <div>
+    <%= f.label :branch_line, 'Ramal' %>
+    <%= f.text_field :branch_line %>
+  </div>
+  <div>
+    <%= f.submit 'Salvar' %>
+  </div>
+<% end %>

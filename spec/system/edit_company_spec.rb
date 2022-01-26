@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Usuário edita empresa' do
   it 'com sucesso' do
     # Arrange
-    company = Company.create!(name: 'Abba', fantasy_name: 'ABBA', registration_number: '00395488000101',
+    company = Company.create!(name: 'Abba', fantasy_name: 'ABBA', registration_number: '00000000000101',
                               postal_code: '80610280')
     # Act
     visit root_path
