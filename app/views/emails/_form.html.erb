@@ -1,7 +1,7 @@
-<%= form_with model: @person do |f| %>
+<%= form_with model: @email do |f| %>
   <div>
-    <%= f.label :name, 'Nome' %>
-    <%= f.text_field :name %>
+    <%= f.label :account, 'Conta:' %>
+    <%= f.text_field :account %>
   </div>
   <div>
     <%= f.label :company_id, 'Empresa' %>
@@ -12,8 +12,12 @@
     <%= f.collection_select(:departament_id, Departament.all, :id, :name) %>
   </div>
   <div>
-    <%= f.label :branch_line, 'Ramal' %>
-    <%= f.text_field :branch_line %>
+    <%= f.label :person_id, 'Nome do Usuário' %>
+    <%= f.collection_select(:person_id, Person.all, :id, :name) %>
+  </div>
+  <div>
+    <%= f.label :note, 'Observação' %>
+    <%= f.text_field :note %>
   </div>
   <div>
     <%= f.submit 'Salvar' %>

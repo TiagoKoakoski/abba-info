@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_26_141238) do
+ActiveRecord::Schema.define(version: 2022_01_26_180644) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -34,6 +34,19 @@ ActiveRecord::Schema.define(version: 2022_01_26_141238) do
     t.index ["company_id"], name: "index_departaments_on_company_id"
   end
 
+  create_table "emails", force: :cascade do |t|
+    t.string "account"
+    t.integer "company_id", null: false
+    t.integer "departament_id", null: false
+    t.integer "person_id", null: false
+    t.string "note"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_emails_on_company_id"
+    t.index ["departament_id"], name: "index_emails_on_departament_id"
+    t.index ["person_id"], name: "index_emails_on_person_id"
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "branch_line"
@@ -46,6 +59,9 @@ ActiveRecord::Schema.define(version: 2022_01_26_141238) do
   end
 
   add_foreign_key "departaments", "companies"
+  add_foreign_key "emails", "companies"
+  add_foreign_key "emails", "departaments"
+  add_foreign_key "emails", "people"
   add_foreign_key "people", "companies"
   add_foreign_key "people", "departaments"
 end

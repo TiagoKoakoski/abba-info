@@ -27,13 +27,13 @@ class PeopleController < ApplicationController
   end
 
   def update
-    person = Person.new(params.require(:person).permit(:name, :branch_line, :company_id, :departament_id))
-    if person.save
+    person = Person.find(params['id'])
+    if person.update(params.require(:person).permit(:name, :branch_line, :company_id, :departament_id))
       flash[:notice] = 'Pessoa atualidada com sucesso'
       redirect_to person
     else
       flash[:alert] = 'Pessoa não pode ser atualizada'
-      render :new
+      render :edit
     end
   end
 

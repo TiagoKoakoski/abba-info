@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :companies, only: [:new, :create, :show, :index, :edit, :update]
   resources :departaments, only: [:new, :create, :show, :index, :edit, :update]
   resources :people, only: [:new, :create, :show, :index, :edit, :update]
+  resources :emails, only: [:new, :create, :show, :index, :edit, :update]
 end

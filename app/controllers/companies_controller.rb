@@ -29,15 +29,15 @@ class CompaniesController < ApplicationController
   end
 
   def update
-    company = Company.new(params.require(:company).permit(:name,
-                          :registration_number, :address, :district,
-                          :city, :state, :fone_number, :fantasy_name))
-    if company.save 
+    company = Company.find(params['id'])
+    if company.update(params.require(:company).permit(:name,
+                      :registration_number, :address, :district,
+                      :city, :state, :fone_number, :fantasy_name))
       flash[:notice] = 'Empresa atualizada com sucesso'
       redirect_to company_path(company.id)
     else
       flash[:alert] = 'Empresa não pode ser atualizada'
-      render :new
+      render :edit
     end
   end
 end

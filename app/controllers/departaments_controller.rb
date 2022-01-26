@@ -27,13 +27,13 @@ class DepartamentsController < ApplicationController
   end
 
   def update
-    departament = Departament.new(params.require(:departament).permit(:name, :company_id))
-    if departament.save
+    departament = Departament.find(params['id'])
+    if departament.update(params.require(:departament).permit(:name, :company_id))
       flash[:notice] = 'Departamento atualizado com sucesso'
       redirect_to departaments_path
     else
       flash[:alert] = 'Departamento não pode ser atualizado'
-      render :new
+      render :edit
     end
   end
 

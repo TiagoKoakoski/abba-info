@@ -1,0 +1,12 @@
+<h1><%= @email.account %></h1>
+
+<ul>
+  <li>
+    <%= @email.company.name %> - <%= @email.departament.name %>
+  </li>
+  <li>
+    Nome do usuário: <%= @email.person.name %>
+  </li>
+</ul>
+
+<%= link_to 'Editar', edit_email_path(@email.id) %>

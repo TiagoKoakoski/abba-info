@@ -1,0 +1,15 @@
+<h1>Lista de e-mails:</h1>
+
+<div>
+  <ol>
+    <% if @emails.empty? %>
+      Nenhuma pessoa cadastrada
+    <% else %>
+      <% @emails.each do |e| %>
+        <div>
+          <li><%= e.company.fantasy_name %> | <%= e.departament.name %> | <%= e.person.name %> | <%= link_to e.account, e %> </li>
+        </div>
+      <% end %>
+    <% end %>
+  </ol>
+</div>
