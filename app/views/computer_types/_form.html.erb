@@ -1,0 +1,9 @@
+<%= form_with model: @computer_type do |f| %>
+  <div>
+    <%= f.label :name, 'Tipo' %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.submit 'Salvar' %>
+  </div>
+<% end %>

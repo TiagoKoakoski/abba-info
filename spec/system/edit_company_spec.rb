@@ -16,5 +16,16 @@ describe 'Usuário edita empresa' do
     expect(page).to have_css('h1', text: 'Comunhão Cristã Abba')
     expect(page).to have_content('Empresa atualizada com sucesso')
   end
-
+  
+  it 'CNPJ é obrigatório' do
+    # Arrange
+    company = create(:company)
+    # Act
+    visit edit_company_path(company.id)
+    fill_in 'CNPJ', with: ''
+    click_on 'Salvar'
+    # Assert
+    expect(page).to have_content('Empresa não pode ser atualizada')
+    expect(page).not_to have_content('Empresa atualizada com sucesso')
+  end
 end

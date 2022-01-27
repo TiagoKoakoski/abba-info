@@ -1,0 +1,2 @@
+class ComputerType < ApplicationRecord
+end

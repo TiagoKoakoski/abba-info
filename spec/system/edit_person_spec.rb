@@ -13,5 +13,18 @@ describe 'Usuário edita pessoa no sistema' do
     click_on 'Salvar'
     # Assert
     expect(page).to have_content('Ramal: 2020')
+    expect(page).to have_content('Pessoa atualizada com sucesso')
+  end
+
+  it 'nome é obrigatório' do
+    # Arrange
+    person = create(:person)
+    # Act
+    visit edit_person_path(person.id)
+    fill_in 'Nome', with: ''
+    click_on 'Salvar'
+    # Assert
+    expect(page).to have_content('Pessoa não pode ser atualizada')
+    expect(page).not_to have_content('Pessoa atualizada com sucesso')
   end
 end
