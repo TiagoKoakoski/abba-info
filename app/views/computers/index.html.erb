@@ -1,0 +1,9 @@
+<h1>Lista de computadores:</h1>
+
+<div>
+  <% @computers.each do |c| %>
+    <div>
+      <%= link_to c.code, c %> | <%= c.person.name %>
+    </div>
+    <% end %>
+</div>

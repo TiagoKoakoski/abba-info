@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_27_150046) do
+ActiveRecord::Schema.define(version: 2022_01_28_124650) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,34 @@ ActiveRecord::Schema.define(version: 2022_01_27_150046) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "computers", force: :cascade do |t|
+    t.string "code"
+    t.integer "company_id", null: false
+    t.integer "departament_id", null: false
+    t.integer "person_id", null: false
+    t.integer "computer_type_id", null: false
+    t.string "cpu"
+    t.string "memory_type"
+    t.integer "memory"
+    t.string "mother_board"
+    t.string "storage_type"
+    t.integer "storage"
+    t.integer "operating_system_id", null: false
+    t.string "operating_system_key"
+    t.string "office"
+    t.string "gpu"
+    t.string "mac_address"
+    t.string "ip"
+    t.integer "status", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_computers_on_company_id"
+    t.index ["computer_type_id"], name: "index_computers_on_computer_type_id"
+    t.index ["departament_id"], name: "index_computers_on_departament_id"
+    t.index ["operating_system_id"], name: "index_computers_on_operating_system_id"
+    t.index ["person_id"], name: "index_computers_on_person_id"
   end
 
   create_table "departaments", force: :cascade do |t|
@@ -53,6 +81,12 @@ ActiveRecord::Schema.define(version: 2022_01_27_150046) do
     t.index ["person_id"], name: "index_emails_on_person_id"
   end
 
+  create_table "operating_systems", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "people", force: :cascade do |t|
     t.string "name"
     t.string "branch_line"
@@ -64,6 +98,11 @@ ActiveRecord::Schema.define(version: 2022_01_27_150046) do
     t.index ["departament_id"], name: "index_people_on_departament_id"
   end
 
+  add_foreign_key "computers", "companies"
+  add_foreign_key "computers", "computer_types"
+  add_foreign_key "computers", "departaments"
+  add_foreign_key "computers", "operating_systems"
+  add_foreign_key "computers", "people"
   add_foreign_key "departaments", "companies"
   add_foreign_key "emails", "companies"
   add_foreign_key "emails", "departaments"

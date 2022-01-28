@@ -8,6 +8,9 @@ class ComputerTypesController < ApplicationController
     if computer_type.save
       flash[:notice] = 'Tipo cadastrado com sucesso'
       redirect_to root_path
+    else
+      flash[:alert] = 'Tipo não pode ser cadastrado'
+      render :new
     end
   end
 end

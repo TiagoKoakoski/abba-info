@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :people, only: [:new, :create, :show, :index, :edit, :update]
   resources :emails, only: [:new, :create, :show, :index, :edit, :update]
   resources :computer_types, only: [:new, :create, :show, :index, :edit, :update]
+  resources :computers, only: [:new, :create, :show, :index, :edit, :update]
+  resources :operating_systems, only: [:new, :create]
 end

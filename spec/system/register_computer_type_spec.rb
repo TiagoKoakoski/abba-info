@@ -11,4 +11,13 @@ describe 'Usuário cadastra tipo de computador' do
     # Assert
     expect(page).to have_content('Tipo cadastrado com sucesso')
   end
+  it 'nome é obrigatório' do
+    # Arrange
+    # Act
+    visit root_path
+    click_on 'Cadastrar tipo de computador'
+    click_on 'Salvar'
+    # Assert
+    expect(page).to have_content('Tipo não pode ser cadastrado')
+  end
 end

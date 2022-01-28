@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :computer_type do
-    name { "MyString" }
+    name { "Notebook" }
   end
 end
