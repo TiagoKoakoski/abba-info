@@ -12,7 +12,7 @@ describe 'Usuário cadastra sistema operacional' do
     expect(page).to have_content('Sistema operacional cadastrado com sucesso')
     expect(page).not_to have_content('Sistema operacional não pode ser cadastrado')
   end
-  
+
   it 'mas o nome é obrigatório' do
     # Arrange
     # Act

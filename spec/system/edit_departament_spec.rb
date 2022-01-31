@@ -4,7 +4,7 @@ describe 'Usuário edita departamento' do
   it 'com sucesso' do
     # Arrange
     company = Company.create!(name: 'Abba', fantasy_name: 'ABBA', registration_number: '00395488000101',
-                                        postal_code: '80610280')
+                              postal_code: '80610280')
     departament = Departament.create!(name: 'TI', company: company)
     # Act
     visit root_path

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :departament do
-    name { "Departamento" }
+    name { 'Departamento' }
     company
   end
-end 
+end

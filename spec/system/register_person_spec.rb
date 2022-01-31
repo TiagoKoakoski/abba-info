@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 describe 'Usuário registra pessoa no sistema' do
   it 'com sucesso' do
     # Arrange
@@ -18,7 +17,7 @@ describe 'Usuário registra pessoa no sistema' do
     expect(page).to have_content('Nome Sobrenome')
     expect(page).to have_content('Ramal: 1010')
   end
-  
+
   it 'mas nome é obrigatório' do
     # Arrange
     # company = create(:company)

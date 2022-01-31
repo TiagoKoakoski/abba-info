@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe 'Visitante acessa a pagina inicial' do
-
   it 'com sucesso' do
     # Arrange
     # Act

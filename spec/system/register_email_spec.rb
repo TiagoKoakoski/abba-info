@@ -21,7 +21,7 @@ describe 'Usuário cadastra email' do
     expect(page).to have_content('Nome Sobrenome')
     expect(page).to have_content('Conta criada com sucesso')
   end
-  
+
   it 'conta é obrigatória' do
     # Arrange
     company = create(:company)

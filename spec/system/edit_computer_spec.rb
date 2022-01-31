@@ -7,7 +7,7 @@ describe 'Usuário edita computador' do
     # Act
     visit root_path
     click_on 'Lista de computadores'
-    click_on "#{computer.code}"
+    click_on computer.code.to_s
     click_on 'Editar'
     fill_in 'Tamanho da memória', with: 8
     click_on 'Salvar'
@@ -15,7 +15,7 @@ describe 'Usuário edita computador' do
     expect(page).to have_content('Computador atualizado com sucesso')
     expect(page).not_to have_content('Computador não pode ser atualizado')
   end
-  
+
   it 'com sucesso' do
     # Arrange
     computer = create(:computer)
@@ -28,5 +28,4 @@ describe 'Usuário edita computador' do
     expect(page).not_to have_content('Computador atualizado com sucesso')
     expect(page).to have_content('Computador não pode ser atualizado')
   end
-
 end

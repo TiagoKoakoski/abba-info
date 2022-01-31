@@ -5,9 +5,9 @@ class CompaniesController < ApplicationController
 
   def create
     company = Company.new(params.require(:company).permit(:name,
-                          :registration_number, :address, :district,
-                          :city, :state, :fone_number, :fantasy_name ))
-    if company.save 
+                                                          :registration_number, :address, :district,
+                                                          :city, :state, :fone_number, :fantasy_name))
+    if company.save
       flash[:notice] = 'Empresa cadastrada com sucesso'
       redirect_to company_path(company.id)
     else
@@ -31,8 +31,8 @@ class CompaniesController < ApplicationController
   def update
     company = Company.find(params['id'])
     if company.update(params.require(:company).permit(:name,
-                      :registration_number, :address, :district,
-                      :city, :state, :fone_number, :fantasy_name))
+                                                      :registration_number, :address, :district,
+                                                      :city, :state, :fone_number, :fantasy_name))
       flash[:notice] = 'Empresa atualizada com sucesso'
       redirect_to company_path(company.id)
     else

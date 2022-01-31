@@ -36,6 +36,4 @@ class EmailsController < ApplicationController
       render :edit
     end
   end
-
 end
-

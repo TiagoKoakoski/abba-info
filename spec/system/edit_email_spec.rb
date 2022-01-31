@@ -16,7 +16,7 @@ describe 'Usuário edita email' do
     expect(page).to have_content('admin@admin.com')
     expect(page).not_to have_content('email@email.com')
   end
-  
+
   it 'com sucesso' do
     # Arrange
     email = create(:email)

@@ -3,17 +3,17 @@ require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'simplecov'
 SimpleCov.start 'rails' do
-  add_filter /channels/
-  add_filter /helpers/
-  add_filter /jobs/
-  add_filter /mailers/
-  #add_filter "/models/user.rb"
-  #add_filter "/models/application_record.rb"
+  add_filter(/channels/)
+  add_filter(/helpers/)
+  add_filter(/jobs/)
+  add_filter(/mailers/)
+  # add_filter "/models/user.rb"
+  # add_filter "/models/application_record.rb"
 end
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

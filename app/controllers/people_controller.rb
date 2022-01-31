@@ -36,5 +36,4 @@ class PeopleController < ApplicationController
       render :edit
     end
   end
-
 end

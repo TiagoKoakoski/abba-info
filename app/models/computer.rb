@@ -1,6 +1,6 @@
 require 'securerandom'
 class Computer < ApplicationRecord
-  enum status: { ativo: 0, menutençao: 1, desativado: 2}
+  enum status: { ativo: 0, menutençao: 1, desativado: 2 }
   belongs_to :company
   belongs_to :departament
   belongs_to :person
@@ -12,6 +12,6 @@ class Computer < ApplicationRecord
   private
 
   def create_code
-    self.code = "#{self.company.fantasy_name}-#{self.departament.name}-" + SecureRandom.hex(1)
+    self.code = "#{company.fantasy_name}-#{departament.name}-" + SecureRandom.hex(1)
   end
 end
