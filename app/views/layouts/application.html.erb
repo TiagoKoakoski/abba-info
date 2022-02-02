@@ -22,21 +22,6 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">Inicio</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Listar
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="#">Empresas</a></li>
-                <li><a class="dropdown-item" href="#">Departamentos</a></li>
-                <li><a class="dropdown-item" href="#">Pessoas</a></li>
-                <li><a class="dropdown-item" href="#">Email</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Tipo de computador</a></li>
-                <li><a class="dropdown-item" href="#">Sistema Operacional</a></li>
-                <li><a class="dropdown-item" href="#">Computador</a></li>
-              </ul>
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="/companies/new">Cadastrar empresa</a>
             </li>
@@ -58,26 +43,39 @@
             <li class="nav-item">
               <a class="nav-link" href="/computers/new">Cadastrar computador</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Cadastros
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="/companies/new">Ca</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
           </ul>
         </div>
       </div>
     </nav>
-    <nav>
-      | <%= link_to 'Lista de empresas', companies_path %>
-      <%= link_to 'Lista de departamentos', departaments_path %>
-      <%= link_to 'Lista de pessoas', people_path %>
-      <%= link_to 'Lista de e-mails', emails_path %>
-      <%= link_to 'Lista de computadores', computers_path %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Abba - Info</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/companies">Lista de empresas/a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/departaments">Lista de departamentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/people">Lista de pessoas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/emails">Lista de e-mails</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/computers">Lista de computadores</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <div>
       <%= flash[:notice] %>
