@@ -1,7 +1,14 @@
 <%= form_with model: @operating_system do |f| %>
-  <div>
-    <%= f.label :name, 'Nome' %>
-    <%= f.text_field :name %>
-  </div>
-  <%= f.submit 'Salvar' %>
+  <label class="ls-label col-md-3">
+    <div>
+      <%= f.label :name, 'Nome' %>
+      <%= f.text_field :name %>
+    </div>
+  </label>
+
+  <label class="ls-label col-md-3">
+    <div class="ls-custom-btn" >
+      <%= f.submit 'Salvar', class: "ls-btn" %>
+    </div>
+  </label>
 <% end %>

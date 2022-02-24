@@ -1,4 +1,5 @@
 class ComputerTypesController < ApplicationController
+  before_action :authenticate_user!
   def new
     @computer_type = ComputerType.new
   end

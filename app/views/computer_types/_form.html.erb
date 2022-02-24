@@ -1,9 +1,14 @@
-<%= form_with model: @computer_type do |f| %>
-  <div>
-    <%= f.label :name, 'Tipo' %>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.submit 'Salvar' %>
-  </div>
-<% end %>
+
+  <%= form_with model: @computer_type do |f| %>
+    <label class="ls-label col-md-3">
+      <div>
+        <%= f.label :name, 'Tipo' %>
+        <p class="ls-label-info">Digite o tipo do computador</p>
+        <%= f.text_field :name %>
+      </div>
+    </label>
+    
+    <div class="ls-actions-btn">
+      <%= f.submit 'Salvar', class: "ls-btn" %>
+    </div>
+  <% end %>

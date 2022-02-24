@@ -1,13 +1,20 @@
 <%= form_with model: @departament do |d| %>
-  <div>
-    <%= d.label :name, 'Nome' %>
-    <%= d.text_field :name %>
-  </div>
-  <div>
+  <label class="ls-label col-md-3">  
+    <div>
+      <%= d.label :name, 'Nome' %>
+      <%= d.text_field :name %>
+    </div>
+  </label>
+
+  <label class="ls-label col-md-3">
     <%= d.label :company_id, 'Empresa' %>
-    <%= d.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
-  </div>
-  <div>
-    <%= d.submit 'Salvar' %>
-  </div>
+    <div class="ls-custom-select">
+      <%= d.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
+    </div>
+  </label>
+  <label class="ls-label col-md-3">
+    <div class="ls-custom-btn">
+      <%= d.submit 'Salvar', class:"ls-btn" %>
+    </div>
+  </label>
 <% end %>
