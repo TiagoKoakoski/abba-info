@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'home#index'
   resources :companies, only: %i[new create show index edit update]
   resources :departaments, only: %i[new create show index edit update]
