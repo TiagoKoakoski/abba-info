@@ -1,10 +1,11 @@
 class CompaniesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   def new
     @company = Company.new
   end
 
   def create
-    company = Company.new(params.require(:company).permit(:name,
+    company = Company.new(params.require(:company).permit(:name, :postal_code,
                                                           :registration_number, :address, :district,
                                                           :city, :state, :fone_number, :fantasy_name))
     if company.save

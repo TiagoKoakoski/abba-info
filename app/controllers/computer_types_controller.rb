@@ -1,5 +1,5 @@
 class ComputerTypesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   def new
     @computer_type = ComputerType.new
   end

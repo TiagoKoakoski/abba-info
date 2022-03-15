@@ -8,6 +8,13 @@
   </label>
 
   <label class="ls-label col-md-3">
+    <div> 
+      <%= f.label :password, 'Senha:' %>
+      <%= f.password_field :password %>
+    </div>
+  </label>
+
+  <label class="ls-label col-md-3">
     <%= f.label :company_id, 'Empresa' %>  
     <div class="ls-custom-select">
       <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
@@ -31,7 +38,7 @@
   <label class="ls-label col-md-3">  
     <div>
       <%= f.label :note, 'Observação' %>
-      <%= f.text_field :note %>
+      <%= f.text_area :note %>
     </div>
   </label>
 

@@ -1,4 +1,5 @@
 class OperatingSystemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   def new
     @operating_system = OperatingSystem.new
   end

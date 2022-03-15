@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   def new
     @person = Person.new
   end
@@ -16,6 +17,7 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params['id'])
+    
   end
 
   def index

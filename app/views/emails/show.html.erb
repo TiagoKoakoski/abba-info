@@ -7,6 +7,11 @@
   <li>
     Nome do usuário: <%= @email.person.name %>
   </li>
+  <% if user_signed_in? %>
+    <li>
+    Senha: <%= @email.password %>
+    </li>
+  <% end %>
 </ul>
 
 <%= link_to 'Editar', edit_email_path(@email.id) %>

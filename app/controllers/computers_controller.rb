@@ -1,4 +1,5 @@
 class ComputersController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   def new
     @computer = Computer.new
   end

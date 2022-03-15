@@ -1,15 +1,24 @@
-<h1>Lista de departamentos:</h1>
+<h1><span class="ls-ico-cog"> Lista de departamentos:</span></h1>
 
 <div>
-  <ol>
-    <% if @departaments.empty? %>
-      Nenhum departamento cadastrado
-    <% else %>
-      <% @departaments.each do |d| %>
-        <div>
-          <li><%= d.company.fantasy_name %> - <%= link_to d.name, d %></li>
-        </div>
-      <% end %>
-    <% end %>
-  </ol>
+  <% if @departaments.empty? %>
+    Nenhum departamento cadastrado
+  <% else %>
+    <table class="ls-table ls-table-striped">
+      <thead>
+        <tr>
+          <th>Empresa</th>
+          <th class="hidden-xs">Departamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @departaments.each do |d| %>
+          <tr>
+            <td><%= d.company.fantasy_name %></td>
+            <td class="hidden-xs"><%= link_to d.name, d %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>

@@ -1,15 +1,29 @@
-<h1>Lista de e-mails:</h1>
+<h1><span class="ls-ico-envelope"> Lista de e-mails:</span></h1>
 
 <div>
-  <ol>
-    <% if @emails.empty? %>
-      Nenhuma pessoa cadastrada
-    <% else %>
-      <% @emails.each do |e| %>
-        <div>
-          <li><%= e.company.fantasy_name %> | <%= e.departament.name %> | <%= e.person.name %> | <%= link_to e.account, e %> </li>
-        </div>
-      <% end %>
-    <% end %>
-  </ol>
+  
+  <% if @emails.empty? %>
+    Nenhuma pessoa cadastrada
+  <% else %>
+    <table class="ls-table ls-table-striped">
+      <thead>
+        <tr>
+          <th>Empresa</th>
+          <th class="hidden-xs">Departamento</th>
+          <th>Nome do usuário</th>
+          <th class="hidden-xs">E-mail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @emails.each do |e| %>
+          <tr>
+            <td><%= e.company.fantasy_name %></td>
+            <td class="hidden-xs"><%= e.departament.name %></td>
+            <td><%= e.person.name %></td>
+            <td class="hidden-xs"><%= link_to e.account, e %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>

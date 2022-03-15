@@ -1,1 +1,69 @@
 <h1>Bem vindo</h1>
+
+<div class="ls-box ls-board-box">
+  <header class="ls-info-header">
+    <h2 class="ls-title-3">Dados do sistema</h2>
+    <p class="ls-float-right ls-float-none-xs ls-small-info">data: <strong><%= @date.strftime("%d/%m/%Y %H:%M") %></strong></p>
+  </header>
+  <div id="sending-stats" class="row">
+    <div class="col-sm-6 col-md-3">
+      <div class="ls-box">
+        <div class="ls-box-head">
+          <h6 class="ls-title-4">Pessoas</h6>
+        </div>
+        <div class="ls-box-body">
+          <strong><%= @people.count %></strong>
+          <small>Cadastradas</small>
+        </div>
+        <div class="ls-box-footer">
+          <a href="/people" aria-label="Listar pessoas" class="ls-btn ls-btn-sm" title="Listar pessoas cadastradas">Listar pessoas</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="ls-box">
+        <div class="ls-box-head">
+          <h6 class="ls-title-4">E-mails</h6>
+        </div>
+        <div class="ls-box-body">
+          <strong><%= @emails.count %></strong>
+          <small>Cadastrados</small>
+        </div>
+        <div class="ls-box-footer">
+          <a href="/emails" aria-label="Listar e-mails" class="ls-btn ls-btn-sm" title="Listar e-mails">Listar e-mails</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="ls-box">
+        <div class="ls-box-head">
+          <h6 class="ls-title-4">Computadores</h6>
+        </div>
+        <div class="ls-box-body">
+          <strong><%= @computers.count %></strong>
+          <small>Cadastrados</small>
+        </div>
+        <div class="ls-box-footer">
+          <a href="/computers" aria-label="Listar computadores" class="ls-btn ls-btn-sm" title="Listar computadores">Listar computadores</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-md-3">
+      <div class="ls-box">
+        <div class="ls-box-head">
+          <h6 class="ls-title-4">DATA</h6>
+        </div>
+        <div class="ls-box-body">
+          <div class="col-xs-6">
+            <strong><%= @date.strftime("%d") %></strong>
+            <small>dia</small>
+          </div>
+          <div class="col-xs-6">
+            <strong><%= @date.strftime("%m") %></strong>
+            <small>mês</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

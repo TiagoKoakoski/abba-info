@@ -1,15 +1,26 @@
-<h1>Lista de pessoas:</h1>
+<h1><span class="ls-ico-users"> Lista de pessoas:</span></h1>
 
 <div>
-  <ol>
-    <% if @people.empty? %>
-      Nenhuma pessoa cadastrada
-    <% else %>
-      <% @people.each do |p| %>
-        <div>
-          <li><%= p.company.fantasy_name %> | <%= p.departament.name %> | <%= link_to p.name, p %></li>
-        </div>
-      <% end %>
-    <% end %>
-  </ol>
+  <% if @people.empty? %>
+    Nenhuma pessoa cadastrada
+  <% else %>
+    <table class="ls-table ls-table-striped">
+      <thead>
+        <tr>
+          <th>Empresa</th>
+          <th class="hidden-xs">Departamento</th>
+          <th>Nome completo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @people.each do |p| %>
+          <tr>
+            <td><%= p.company.fantasy_name %></td>
+            <td class="hidden-xs"><%= p.departament.name %></td>
+            <td><%= link_to p.name, p %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>

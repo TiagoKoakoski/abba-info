@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_24_122439) do
+ActiveRecord::Schema.define(version: 2022_03_15_144220) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_122439) do
     t.string "note"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password"
     t.index ["company_id"], name: "index_emails_on_company_id"
     t.index ["departament_id"], name: "index_emails_on_departament_id"
     t.index ["person_id"], name: "index_emails_on_person_id"
