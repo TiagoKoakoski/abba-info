@@ -10,6 +10,7 @@
           <th>Empresa</th>
           <th class="hidden-xs">Departamento</th>
           <th>Nome completo</th>
+          <th class="hidden-xs">Ramal</th>
         </tr>
       </thead>
       <tbody>
@@ -18,6 +19,7 @@
             <td><%= p.company.fantasy_name %></td>
             <td class="hidden-xs"><%= p.departament.name %></td>
             <td><%= link_to p.name, p %></td>
+            <td class="hidden-xs"><%= p.branch_line %></td>
           </tr>
         <% end %>
       </tbody>

@@ -5,9 +5,14 @@ describe 'Usuário registra pessoa no sistema' do
     # Arrange
     # company = create(:company)
     departament = create(:departament)
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Cadastrar pessoa'
+    within('div#cadastros') do
+      click_on 'Pessoa'
+    end
     fill_in 'Nome', with: 'Nome Sobrenome'
     select 'Teste', from: 'Empresa'
     select 'Departamento', from: 'Departamento'
@@ -22,9 +27,14 @@ describe 'Usuário registra pessoa no sistema' do
     # Arrange
     # company = create(:company)
     departament = create(:departament)
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Cadastrar pessoa'
+    within('div#cadastros') do
+      click_on 'Pessoa'
+    end
     select 'Teste', from: 'Empresa'
     select 'Departamento', from: 'Departamento'
     fill_in 'Ramal', with: '1010'

@@ -3,9 +3,14 @@ require 'rails_helper'
 describe 'Usuário acessa o sistema e cadastra uma empresa' do
   it 'com sucesso' do
     # Arrange
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Cadastrar empresa'
+    within('div#cadastros') do
+      click_on 'Empresa'
+    end
     fill_in 'Razão Social', with: 'Comunhão Cristã Abba'
     fill_in 'Nome Fantasia', with: 'ABBA'
     fill_in 'CNPJ', with: '00.395.488/0001-01'
@@ -25,9 +30,14 @@ describe 'Usuário acessa o sistema e cadastra uma empresa' do
 
   it 'mas não consegue devido a campos obrigatórios' do
     # Arrange
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Cadastrar empresa'
+    within('div#cadastros') do
+      click_on 'Empresa'
+    end
     fill_in 'Razão Social', with: 'Comunhão Cristã Abba'
     fill_in 'Nome Fantasia', with: 'Abba'
     fill_in 'CEP', with: '80610-280'

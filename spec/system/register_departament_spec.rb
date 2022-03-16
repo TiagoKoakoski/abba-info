@@ -5,9 +5,14 @@ describe 'Cadastra departamento' do
     # Arrange
     company = Company.create!(name: 'Abba', fantasy_name: 'ABBA', registration_number: '00395488000101',
                               postal_code: '80610280')
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Cadastrar departamento'
+    within('div#cadastros') do
+      click_on 'Departamento'
+    end
     fill_in 'Nome', with: 'Informática'
     select 'ABBA', from: 'Empresa'
     click_on 'Salvar'
@@ -20,9 +25,14 @@ describe 'Cadastra departamento' do
     # Arrange
     company = Company.create!(name: 'Abba', fantasy_name: 'ABBA', registration_number: '00395488000101',
                               postal_code: '80610280')
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Cadastrar departamento'
+    within('div#cadastros') do
+      click_on 'Departamento'
+    end
     select 'ABBA', from: 'Empresa'
     click_on 'Salvar'
     # Assert

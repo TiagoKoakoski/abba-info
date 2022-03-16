@@ -67,3 +67,88 @@
     </div>
   </div>
 </div>
+
+<% if user_signed_in? %>
+  <div class="ls-box ls-board-box">
+    <header class="ls-info-header">
+      <h2 class="ls-title-3">Painel administrativo</h2>
+      <p class="ls-float-right ls-float-none-xs ls-small-info">data: <strong><%= @date.strftime("%d/%m/%Y %H:%M") %></strong></p>
+    </header>
+    <div id="sending-stats" class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="ls-box">
+          <div class="ls-box-head">
+            <h6 class="ls-title-4">Algo novo</h6>
+          </div>
+          <div class="ls-box-body">
+            <% if @password_door != nil %>
+              <strong><%= @password_door.bottom %></strong>
+              <small>Bottom</small>
+            <% end %>
+          </div>
+          <div class="ls-box-footer">
+            <a href="/password_doors/new" aria-label="Nova senha" class="ls-btn ls-btn-sm" title="Gerar novas senhas">Alguma coisa</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="ls-box">
+          <div class="ls-box-head">
+            <h6 class="ls-title-4">Algo Novo</h6>
+          </div>
+          <div class="ls-box-body">
+            <% if @password_door != nil %>
+              <strong><%= @password_door.top %></strong>
+              <small>TOP</small>
+            <% end %>
+          </div>
+          <div class="ls-box-footer">
+            <a href="/password_doors/new" aria-label="Nova senha" class="ls-btn ls-btn-sm" title="Gerar novas senhas">Alguma coisa</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="ls-box">
+          <div class="ls-box-head">
+            <h6 class="ls-title-4">WIFI</h6>
+          </div>
+          <div class="ls-box-body">
+            <div class="col-xs-6">
+              <strong>ABBA</strong>
+              <small>82467391</small>
+            </div>
+            <div class="col-xs-6">
+              <strong>CA</strong>
+              <small>19aCa_Reino</small>
+            </div>
+          </div>
+          <div class="ls-box-footer">
+            <a href="https://192.168.1.175:8443" aria-label="Nova senha" class="ls-btn ls-btn-sm" title="Gerar novas senhas">Gerenciador</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="ls-box">
+          <div class="ls-box-head">
+            <h6 class="ls-title-4">Senhas portas</h6>
+          </div>
+          <% if @password_door != nil %>
+            <div class="ls-box-body">
+              <div class="col-xs-6">
+                <strong><%= @password_door.top %></strong>
+                <small>Top</small>
+              </div>
+              <div class="col-xs-6">
+                <strong><%= @password_door.bottom %></strong>
+                <small>Bottom</small>
+              </div>
+            </div>
+          <% end %>
+          <div class="ls-box-footer">
+            <a href="/password_doors/new" aria-label="Nova senha" class="ls-btn ls-btn-sm" title="Gerar novas senhas">Gerar nova senha</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

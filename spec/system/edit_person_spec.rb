@@ -4,9 +4,14 @@ describe 'Usuário edita pessoa no sistema' do
   it 'com sucesso' do
     # Arrange
     person = create(:person)
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Lista de pessoas'
+    within('div#listas') do
+      click_on 'Pessoas'
+    end
     click_on 'Nome Sobrenome'
     click_on 'Editar'
     fill_in 'Ramal', with: '2020'
@@ -19,7 +24,10 @@ describe 'Usuário edita pessoa no sistema' do
   it 'nome é obrigatório' do
     # Arrange
     person = create(:person)
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit edit_person_path(person.id)
     fill_in 'Nome', with: ''
     click_on 'Salvar'

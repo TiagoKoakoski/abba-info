@@ -4,5 +4,6 @@ class HomeController < ApplicationController
     @emails = Email.all
     @computers = Computer.all
     @date = Time.now
+    @password_door = PasswordDoor.last
   end
 end

@@ -6,9 +6,14 @@ describe 'Usuário cadastra email' do
     company = create(:company)
     departament = Departament.create!(name: 'Departamento', company: company)
     person = Person.create!(name: 'Nome Sobrenome', company: company, departament: departament, branch_line: '1010')
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Cadastrar email'
+    within('div#cadastros') do
+      click_on 'Email'
+    end
     fill_in 'Conta', with: 'usuario@email.com'
     select 'Teste', from: 'Empresa'
     select 'Departamento', from: 'Departamento'
@@ -27,9 +32,14 @@ describe 'Usuário cadastra email' do
     company = create(:company)
     departament = Departament.create!(name: 'Departamento', company: company)
     person = Person.create!(name: 'Nome Sobrenome', company: company, departament: departament, branch_line: '1010')
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Cadastrar email'
+    within('div#cadastros') do
+      click_on 'Email'
+    end
     select 'Teste', from: 'Empresa'
     select 'Departamento', from: 'Departamento'
     select 'Nome Sobrenome', from: 'Nome do Usuário'

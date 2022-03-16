@@ -1,12 +1,15 @@
-<h1><%= @person.name %></h1>
 
-<ul>
-  <li>
-    <%= @person.company.name %> - <%= @person.departament.name %>
-  </li>
-  <li>
-    Ramal: <%= @person.branch_line %>
-  </li>
-</ul>
-
-<%= link_to 'Editar', edit_person_path(@person.id) %>
+<div class="ls-box ls-md-space">
+    <div class="row">
+      <div class="col-md-2 ls-txt-center">
+      <span class="ls-ico-alone ls-ico-user"></span>
+      </div>
+      <div class="col-md-10">
+        <h3 class="ls-title-5"><strong><%= @person.name %></strong></h3>
+        <p><%= @person.company.name %> - <%= @person.departament.name %></p>
+        <p>Ramal: <%= @person.branch_line %></p>
+      
+        <p>  <%= link_to 'Editar', edit_person_path(@person.id) %></p>
+      </div>
+    </div>
+  </div>

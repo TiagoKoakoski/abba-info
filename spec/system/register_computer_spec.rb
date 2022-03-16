@@ -7,9 +7,14 @@ describe 'Usuário cadastra computador' do
     create(:person)
     create(:computer_type)
     create(:operating_system)
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Cadastrar computador'
+    within('div#cadastros') do
+      click_on 'Computador'
+    end
     within('div#formnew')
     select 'Company', from: 'Empresa'
     select 'Departamento', from: 'Departamento'
@@ -36,9 +41,14 @@ describe 'Usuário cadastra computador' do
     create(:company, fantasy_name: 'Company')
     create(:person)
     create(:operating_system)
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Cadastrar computador'
+    within('div#cadastros') do
+      click_on 'Computador'
+    end
     within('div#formnew')
     select 'Company', from: 'Empresa'
     select 'Departamento', from: 'Departamento'

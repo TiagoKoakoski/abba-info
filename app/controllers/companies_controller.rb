@@ -31,7 +31,7 @@ class CompaniesController < ApplicationController
 
   def update
     company = Company.find(params['id'])
-    if company.update(params.require(:company).permit(:name,
+    if company.update(params.require(:company).permit(:name, :postal_code,
                                                       :registration_number, :address, :district,
                                                       :city, :state, :fone_number, :fantasy_name))
       flash[:notice] = 'Empresa atualizada com sucesso'

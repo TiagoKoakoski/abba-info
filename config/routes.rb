@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :computer_types, only: %i[new create show index edit update]
   resources :computers, only: %i[new create show index edit update]
   resources :operating_systems, only: %i[new create]
+  resources :password_doors, only: %i[new create]
 end

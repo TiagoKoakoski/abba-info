@@ -6,9 +6,14 @@ describe 'Usuário edita departamento' do
     company = Company.create!(name: 'Abba', fantasy_name: 'ABBA', registration_number: '00395488000101',
                               postal_code: '80610280')
     departament = Departament.create!(name: 'TI', company: company)
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Lista de departamentos'
+    within("div#listas") do
+      click_on 'Departamentos'
+    end
     click_on 'TI'
     click_on 'Editar'
     fill_in 'Nome', with: 'Informática'
@@ -23,7 +28,10 @@ describe 'Usuário edita departamento' do
     # Arrange
     company = create(:company)
     departament = Departament.create!(name: 'TI', company: company)
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit edit_departament_path(departament.id)
     fill_in 'Nome', with: ''
     click_on 'Salvar'

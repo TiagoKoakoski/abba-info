@@ -4,9 +4,14 @@ describe 'Usuário edita email' do
   it 'com sucesso' do
     # Arrange
     email = create(:email)
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit root_path
-    click_on 'Lista de e-mails'
+    within("div#listas") do
+      click_on 'Emails'
+    end
     click_on 'email@email.com'
     click_on 'Editar'
     fill_in 'Conta', with: 'admin@admin.com'
@@ -20,7 +25,10 @@ describe 'Usuário edita email' do
   it 'com sucesso' do
     # Arrange
     email = create(:email)
+    user = create(:user)
+    
     # Act
+    login_as(user)
     visit edit_email_path(email.id)
     fill_in 'Conta', with: ''
     click_on 'Salvar'
