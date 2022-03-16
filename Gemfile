@@ -25,7 +25,10 @@ gem 'simple_form'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'bootstrap', '~> 5.1.3'
+
 gem 'devise'
+
+gem 'faraday'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

@@ -1,3 +1,4 @@
+
 class PeopleController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   def new
@@ -6,6 +7,10 @@ class PeopleController < ApplicationController
 
   def create
     person = Person.new(params.require(:person).permit(:name, :branch_line, :company_id, :departament_id))
+    #response = Faraday.get("https://pokeapi.co/api/v2/pokemon/1")
+    #parsed_response = JSON.parse(response.body)
+    #person.codename = parsed_response['name']
+    #person.image = parsed_response['sprites']['front_default']
     if person.save
       flash[:notice] = 'Pessoa cadastrada com sucesso'
       redirect_to person

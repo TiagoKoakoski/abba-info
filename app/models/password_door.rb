@@ -1,5 +1,9 @@
 class PasswordDoor < ApplicationRecord
   before_create :password_generate
+  validates :top, length: { is: 4 }
+  validates :bottom, length: { is: 4 }
+  validates :top, uniqueness: true
+  validates :bottom, uniqueness: true
 
   def password_generate
     if self.top.nil?
