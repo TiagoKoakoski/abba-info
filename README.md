@@ -43,6 +43,18 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'devise'
 ```
 
+## Usando o sistema via Docker
+
+Montando o container:
+```
+sudo docker build . -t abba
+```
+Executando o container:
+```
+docker run -it -p 3000:3000 -v ~/caminho_ate_o_app/abba-info/:/app abba:latest bash
+
+```
+
 
 ## Configuration
 
