@@ -78,32 +78,28 @@
       <div class="col-sm-6 col-md-3">
         <div class="ls-box">
           <div class="ls-box-head">
-            <h6 class="ls-title-4">Algo novo</h6>
+            <h6 class="ls-title-4">Empresas</h6>
           </div>
           <div class="ls-box-body">
-            <% if @password_door != nil %>
-              <strong><%= @password_door.bottom %></strong>
-              <small>Bottom</small>
-            <% end %>
+            <strong><%= @companies.count %></strong>
+            <small>cadastradas</small>
           </div>
           <div class="ls-box-footer">
-            <a href="/password_doors/new" aria-label="Nova senha" class="ls-btn ls-btn-sm" title="Gerar novas senhas">Alguma coisa</a>
+            <a href="/companies" aria-label="Empresa" class="ls-btn ls-btn-sm" title="Listar empresas">Listar empresas</a>
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="ls-box">
           <div class="ls-box-head">
-            <h6 class="ls-title-4">Algo Novo</h6>
+            <h6 class="ls-title-4">Departamentos</h6>
           </div>
           <div class="ls-box-body">
-            <% if @password_door != nil %>
-              <strong><%= @password_door.top %></strong>
-              <small>TOP</small>
-            <% end %>
+            <strong><%= @departaments.count %></strong>
+            <small>Cadastrados</small>
           </div>
           <div class="ls-box-footer">
-            <a href="/password_doors/new" aria-label="Nova senha" class="ls-btn ls-btn-sm" title="Gerar novas senhas">Alguma coisa</a>
+            <a href="/departaments" aria-label="Departamentos" class="ls-btn ls-btn-sm" title="Listar departamentos">Listar departamentos</a>
           </div>
         </div>
       </div>

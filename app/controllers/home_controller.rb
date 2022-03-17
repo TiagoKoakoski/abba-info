@@ -5,5 +5,7 @@ class HomeController < ApplicationController
     @computers = Computer.all
     @date = Time.now
     @password_door = PasswordDoor.last
+    @companies = Company.all
+    @departaments = Departament.all
   end
 end
