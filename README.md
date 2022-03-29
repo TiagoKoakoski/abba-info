@@ -11,6 +11,7 @@ Neste sistema é possivel realizar os seguintes cadastros:
 - Pessoas
 - Emails
 - Computadores e itens relacionados
+- Dispositivos que possuem acesso a internet
 
 Novas funcionalidades estão sendo adicionadas conforme as demandas vindas do uso da aplicação.
 

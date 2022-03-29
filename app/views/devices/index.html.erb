@@ -1,0 +1,28 @@
+<h1><span class="ls-ico-ftp"> Lista de dispositivos:</span></h1>
+
+<div>
+  <% if @devices.empty? %>
+    Nenhum dispositivo cadastrado
+  <% else %>
+    <table class="ls-table ls-table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th class="hidden-xs">Marca</th>
+          <th>Modelo</th>
+          <th class="hidden-xs">IP</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @devices.each do |d| %>
+          <tr>
+            <td><%= link_to d.name, d %></td>
+            <td class="hidden-xs"><%= d.brand %></td>
+            <td><%= d.model %></td>
+            <td class="hidden-xs"><%= d.ip %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

@@ -1,9 +1,28 @@
 <h1><span class="ls-ico-screen"> Lista de computadores:</span></h1>
 
 <div>
-  <% @computers.each do |c| %>
-    <div>
-      <%= link_to c.code, c %> | <%= c.person.name %>
-    </div>
-    <% end %>
+  <% if @computers.empty? %>
+    Nenhum computador cadastrado
+  <% else %>
+    <table class="ls-table ls-table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th class="hidden-xs">Empresa</th>
+          <th>Departamento</th>
+          <th class="hidden-xs">Usuário</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @computers.each do |c| %>
+          <tr>
+            <td><%= link_to c.code, c %></td>
+            <td class="hidden-xs"><%= c.company.fantasy_name %></td>
+            <td><%= c.departament.name %></td>
+            <td class="hidden-xs"><%= c.person.name  %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 </div>

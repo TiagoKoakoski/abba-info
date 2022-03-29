@@ -1,0 +1,18 @@
+
+<div class="ls-box ls-md-space">
+    <div class="row">
+      <div class="col-md-2 ls-txt-center">
+        <span class="ls-ico-alone ls-ico-user"></span>
+      </div>
+      <div class="col-md-10">
+        <h3 class="ls-title-5"><strong><%= @device.name %></strong></h3>
+        <p><%= @device.brand %> | <%= @device.model %></p>
+        <p>IP: <%= @device.ip %></p>
+        <p>MacAddress: <%= @device.mac_address %></p>
+        <p>Local: <%= @device.place %></p>
+        <p>Observação: <%= @device.note %></p>
+        
+        <p><%= link_to 'Editar', edit_device_path(@device.id) %></p>
+      </div>
+    </div>
+  </div>

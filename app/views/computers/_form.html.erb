@@ -117,6 +117,14 @@
       <%= f.text_field :office_key %>
     </div>
   </label>
+
+  <label class="ls-label col-md-3">
+    <div>
+      <%= f.label :note, 'Observação:' %>
+      <%= f.text_area :note %>
+    </div>
+  </label>
+  
   <label class="ls-label col-md-3">
     <div class="ls-actions-btn">
       <%= f.submit 'Salvar', class: "ls-btn" %>

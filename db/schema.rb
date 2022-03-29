@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_16_192002) do
+ActiveRecord::Schema.define(version: 2022_03_29_183545) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2022_03_16_192002) do
     t.integer "status", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "note"
     t.index ["company_id"], name: "index_computers_on_company_id"
     t.index ["computer_type_id"], name: "index_computers_on_computer_type_id"
     t.index ["departament_id"], name: "index_computers_on_departament_id"
@@ -66,6 +67,18 @@ ActiveRecord::Schema.define(version: 2022_03_16_192002) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_departaments_on_company_id"
+  end
+
+  create_table "devices", force: :cascade do |t|
+    t.string "name"
+    t.string "brand"
+    t.string "model"
+    t.string "ip"
+    t.string "mac_address"
+    t.string "place"
+    t.string "note"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "emails", force: :cascade do |t|
