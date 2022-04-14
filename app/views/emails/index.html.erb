@@ -15,7 +15,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @emails.each do |e| %>
+        <% @emails.sort.each do |e| %>
           <tr>
             <td><%= e.company.fantasy_name %></td>
             <td class="hidden-xs"><%= e.departament.name %></td>

@@ -1,9 +1,18 @@
-<h1><%= @departament.name %></h1>
-
-<ul>
-  <li>
-    <%= @departament.company.name %>
-  </li>
-</ul>
-
-<%= link_to 'Editar', edit_departament_path(@departament.id) %>
+<div class="ls-box ls-md-space">
+    <div class="row">
+      <div class="col-md-2 ls-txt-center">
+        <span class="ls-ico-alone ls-ico-user"></span>
+      </div>
+      <div class="col-md-10">
+        <h2 class="ls-title-5"><strong><%= @departament.name %></strong></h2>
+        <p><%= @departament.company.name %></p>
+                
+        <p><%= link_to 'Editar', edit_departament_path(@departament.id) %></p>
+        
+        <h3 class="ls-title-5"><strong>Pessoas</strong></h3>
+        <%= @departament.people.each do |person| %>
+          <p><%= person.name %> - <%= person.branch_line%></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
