@@ -26,6 +26,8 @@ gem 'simple_form'
 # gem 'image_processing', '~> 1.2'
 gem 'bootstrap'
 
+gem 'jquery-rails'
+
 gem 'devise'
 
 gem 'faraday'

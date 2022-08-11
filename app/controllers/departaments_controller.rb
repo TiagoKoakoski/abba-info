@@ -16,7 +16,7 @@ class DepartamentsController < ApplicationController
   end
 
   def index
-    @departaments = Departament.all
+    @departaments = Departament.where('name like ?', "%#{params[:q]}%")
   end
 
   def show

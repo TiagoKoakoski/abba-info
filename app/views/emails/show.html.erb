@@ -1,17 +1,14 @@
 <h1><%= @email.account %></h1>
 
-<ul>
-  <li>
-    <%= @email.company.name %> - <%= @email.departament.name %>
-  </li>
-  <li>
-    Nome do usuário: <%= @email.person.name %>
-  </li>
-  <% if user_signed_in? %>
-    <li>
-    Senha: <%= @email.password %>
-    </li>
-  <% end %>
-</ul>
+<div class="card">
+  <div class="card-body">
+    <p><%= @email.company.name %> - <%= @email.departament.name %></p>
+    <p>Nome do usuário: <%= @email.person.name %></p>
 
-<%= link_to 'Editar', edit_email_path(@email.id) %>
+    <% if user_signed_in? %>
+      <p>Senha: <%= @email.password %></p>
+    <% end %>
+  </div>
+
+<%= link_to 'Editar', edit_email_path(@email.id), class:"btn btn-secondary" %>
+</div>

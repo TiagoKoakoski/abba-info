@@ -22,7 +22,7 @@ class CompaniesController < ApplicationController
   end
 
   def index
-    @companies = Company.all
+    @companies = Company.where('name like ? OR fantasy_name like ?', "%#{params[:q]}%", "%#{params[:q]}%")
   end
 
   def edit

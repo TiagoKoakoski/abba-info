@@ -1,28 +1,5 @@
 <h1>Lista de empresas</h1>
 
-<div>
-  <% if @companies.empty? %>
-    Nenhuma empresa cadastrada
-  <% else %>
-    <table class="ls-table ls-table-striped">
-      <thead>
-        <tr>
-          <th>Nome fantasia</th>
-          <th class="hidden-xs">CNPJ</th>
-          <th>CEP</th>
-          <th class="hidden-xs">Endereço</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @companies.each do |c| %>
-          <tr>
-            <td><a href=<%= company_path(c.id)%> title=""><%= c.fantasy_name %></a></td>
-            <td class="hidden-xs"><%= c.registration_number %></td>
-            <td><%= c.postal_code %></td>
-            <td class="hidden-xs"><%= c.address %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  <% end %>
-</div>
+<%= render 'search' %>
+
+<%= render 'companies'%>

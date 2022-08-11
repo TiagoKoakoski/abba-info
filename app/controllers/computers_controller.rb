@@ -37,6 +37,6 @@ class ComputersController < ApplicationController
   end
 
   def index
-    @computers = Computer.all
+    @computers = Computer.where('company_id like ? OR departament_id like ?', "%#{params[:q]}%", "%#{params[:q]}%")
   end
 end

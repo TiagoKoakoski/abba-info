@@ -1,35 +1,17 @@
 <h1><%= @computer.code %></h1>
 
-<div>
-  <ul>
-    <li>
+<div class="card">
+  <div class="card-body">
       <%= @computer.company.fantasy_name %> | <%= @computer.departament.name %>
-    </li>
-    <li>
       <%= @computer.person.name %> | <%= @computer.person.branch_line %>
-    </li>
-    <li>
       <b><%= @computer.computer_type.name %></b>
-    </li>
-    <li>
       CPU: <%= @computer.cpu %> | MB: <%= @computer.mother_board %> | GPU: <%= @computer.gpu %>
-    </li>
-    <li>
       Memória: <%= @computer.memory_type %> | <%= @computer.memory %> GB
-    </li>
-    <li>
       Armazenamento: <%= @computer.storage_type %> | <%= @computer.storage %> GB
-    </li>
-    <li>
       <%= @computer.operating_system.name %> | KEY: <%= @computer.operating_system_key %>
-    </li>
-    <li>
       <%= @computer.office %>
-    </li>
-    <li>
       MAC_ADDRESS: <%= @computer.mac_address %> | IP: <%= @computer.ip %>
-    </li>
-  </ul>
+  </div>
 </div>
 
-<%= link_to 'Editar', edit_computer_path(@computer.id) %>
+<%= link_to 'Editar', edit_computer_path(@computer.id), class: "btn" %>

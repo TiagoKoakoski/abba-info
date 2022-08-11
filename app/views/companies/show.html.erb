@@ -1,29 +1,42 @@
 <h1><%= @company.name %></h1>
 
-<div>
-  <ul>
-    <li>
-      CNPJ: <%= @company.registration_number %>
-    </li>
-    <li>
-      CEP: <%= @company.postal_code %>
-    </li>
-    <li>
-      Endereço: <%= @company.address %>
-    </li>
-    <li>
-      Bairro: <%= @company.district %>
-    </li>
-    <li>
-      Cidade: <%= @company.city %>
-    </li>
-    <li>
-      Estado: <%= @company.state %>
-    </li>
-    <li>
-      Telefone: <%= @company.fone_number %>
-    </li>
-  </ul>
+<div class="card">
+  <div class="card-body">
+    <p><b>CNPJ:</b>
+    <%= @company.registration_number %></p>
+    <p><b>CEP:</b>
+    <%= @company.postal_code %></p>
+    <p>
+      <b>
+        Endereço:
+      </b>
+      <%= @company.address %>
+    </p>
+    <p>
+      <b>
+        Bairro:
+      </b>
+      <%= @company.district %>
+    </p>
+    <p>
+      <b>   
+        Cidade:
+      </b>
+      <%= @company.city %>
+    </p>  
+    <p>
+      <b>
+        Estado:
+      </b>
+      <%= @company.state %>
+    </p>
+    <p>
+      <b>
+        Telefone:
+      </b>
+      <%= @company.fone_number %>
+    </p>    
+  </div>
 </div>
 
-<%= link_to 'Editar', edit_company_path(@company.id) %>
+<%= link_to 'Editar', edit_company_path(@company.id), class:"btn btn-secondary mt-4" %>
