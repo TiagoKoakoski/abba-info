@@ -1,60 +1,54 @@
 
 <div>
   <%= form_with model: @company do |f| %>
-    <label class="ls-label col-md-3">
-      <%= f.label :name,'Razão Social' %>
-      <%= f.text_field :name %>
-    </label>
-    <label class="ls-label col-md-3">
-      <div>
-        <%= f.label :fantasy_name,'Nome Fantasia' %>
-        <%= f.text_field :fantasy_name %>
-      </div>
-    </label>
-    <label class="ls-label col-md-3">
-      <div>
-        <%= f.label :registration_number,'CNPJ' %>
-        <%= f.text_field :registration_number %>
-      </div>
-    </label>
-    <label class="ls-label col-md-3">
-      <div>
-        <%= f.label :postal_code,'CEP' %>
-        <%= f.text_field :postal_code %>
-      </div>
-    </label>
-    <label class="ls-label col-md-3">
-      <div>
-        <%= f.label :address,'Endereço' %>
-        <%= f.text_field :address %>
-      </div>
-    </label>
-    <label class="ls-label col-md-3">
-      <div>
-        <%= f.label :district,'Bairro' %>
-        <%= f.text_field :district %>
-      </div>
-    </label>
-    <label class="ls-label col-md-3">
-      <div>
-        <%= f.label :city, 'Cidade' %>
-        <%= f.text_field :city %>
-      </div>
-    </label>
-    <label class="ls-label col-md-3">
-      <div>
-        <%= f.label :state, 'Estado' %>
-        <%= f.text_field :state %>
-      </div>
-    </label>
-    <label class="ls-label col-md-3">
-      <div>
-        <%= f.label :fone_number, 'Telefone' %>
-        <%= f.text_field :fone_number %>
-      </div>
-    </label>
-    <div class="ls-actions-btn">
-      <%= f.submit 'Salvar', class: "ls-btn" %>
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :name,'Razão Social' %></span>
+      <input type="text" name="company[name]" id="company_name" class="form-control" placeholder="Razão social" aria-label="With textarea"/>
+    </div>
+    
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :fantasy_name,'Nome Fantasia' %></span>
+      <input type="text" name="company[fantasy_name]" id="company_fantasy_name" class="form-control" placeholder="Nome Fantasia" aria-label="With textarea"/>
+    </div>
+
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :registration_number,'CNPJ' %></span>
+      <input type="text" name="company[registration_number]" id="company_registration_number" class="form-control" placeholder="CNPJ" aria-label="With textarea"/>
+    </div>
+
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :postal_code,'CEP' %></span>
+      <input type="text" name="company[postal_code]" id="company_postal_code" class="form-control" placeholder="CEP" aria-label="With textarea"/>
+    </div>
+
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :address,'Endereço' %></span>
+      <input type="text" name="company[address]" id="company_address" class="form-control" placeholder="Endereço" aria-label="With textarea"/>
+    </div>
+
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :district,'Bairro' %></span>
+      <input type="text" name="company[district]" id="company_district" class="form-control" placeholder="Bairro" aria-label="With textarea"/>
+    </div>
+
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :city, 'Cidade' %></span>
+      <input type="text" name="company[city]" id="company_city" class="form-control" placeholder="Cidade" aria-label="With textarea"/>
+    </div>
+
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :state, 'Estado' %></span>
+      <input type="text" name="company[state]" id="company_state" class="form-control" placeholder="Estado" aria-label="With textarea"/>
+    </div>
+
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :fone_number, 'Telefone' %></span>
+      <input type="text" name="company[fone_number]" id="company_fone_number" class="form-control" placeholder="(00) 0000-0000" aria-label="With textarea"/>
+    </div>
+
+
+    <div class="mt-4">
+      <%= f.submit 'Salvar', class: "btn btn-secondary mt4" %>
     </div>
   <% end %>
 </div>

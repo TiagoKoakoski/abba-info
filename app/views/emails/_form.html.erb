@@ -1,50 +1,35 @@
 <%= form_with model: @email do |f| %>
+  <div class="input-group mt-4">
+    <span class="input-group-text"><%= f.label :account, 'Conta' %></span>
+    <input type="text" name="email[account]" id="email_account" class="form-control" placeholder="Conta" aria-label="With textarea"/>
+  </div>
 
-  <label class="ls-label col-md-3">
-    <div> 
-      <%= f.label :account, 'Conta:' %>
-      <%= f.text_field :account %>
-    </div>
-  </label>
+  <div class="input-group mt-4">
+    <span class="input-group-text"><%= f.label :password, 'Senha' %></span>
+    <input type="password" name="email[password]" id="email_password" class="form-control" placeholder="Senha" aria-label="With textarea"/>
+  </div>
 
-  <label class="ls-label col-md-3">
-    <div> 
-      <%= f.label :password, 'Senha:' %>
-      <%= f.password_field :password %>
-    </div>
-  </label>
+  <div class="input-group mt-4 mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Empresa</label>
+    <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name , {class: "form-select", id: "inputGroupSelect01"})%>
+  </div>
+    
+  <div class="input-group mt-4 mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Departamento</label>
+    <%= f.collection_select(:departament_id, Departament.all, :id, :name, {class: "form-select", id: "inputGroupSelect01"})%>
+  </div>
+    
+  <div class="input-group mt-4 mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Usuário</label>
+    <%= f.collection_select(:person_id, Person.all, :id, :name, {class: "form-select", id: "inputGroupSelect01"})%>
+  </div>
 
-  <label class="ls-label col-md-3">
-    <%= f.label :company_id, 'Empresa' %>  
-    <div class="ls-custom-select">
-      <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
-    </div>
-  </label>
-  
-  <label class="ls-label col-md-3">
-    <%= f.label :departament_id, 'Departamento' %>  
-    <div class="ls-custom-select">
-      <%= f.collection_select(:departament_id, Departament.all, :id, :name) %>
-    </div>
-  </label>
+  <div class="input-group mt-4">
+    <span class="input-group-text"><%= f.label :note,'Observação:' %></span>
+    <input type="text" name="email[note]" id="email_note" class="form-control" placeholder="Observação" aria-label="With textarea"/>
+  </div>
 
-  <label class="ls-label col-md-3">
-    <%= f.label :person_id, 'Nome do Usuário' %>
-    <div class="ls-custom-select">
-      <%= f.collection_select(:person_id, Person.all, :id, :name) %>
-    </div>
-  </label>
-
-  <label class="ls-label col-md-3">  
-    <div>
-      <%= f.label :note, 'Observação' %>
-      <%= f.text_area :note %>
-    </div>
-  </label>
-
-  <label class="ls-label col-md-3">
-    <div class="ls-actions-btn">
-        <%= f.submit 'Salvar', class: "ls-btn" %>
-    </div>
-  </label>
+  <div class="mt-4">
+    <%= f.submit 'Salvar', class: "btn btn-secondary mt4" %>
+  </div>
 <% end %>
