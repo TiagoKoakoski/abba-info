@@ -1,15 +1,13 @@
 <div class="card">
   <div class="card-body">
-        <h4><%= @person.name %></h3>
+        <h4><%= @person.name %><img src="<%=@person.image%>" alt="Minha Figura"></h3>
         <p><%= @person.company.name %> - <%= @person.departament.name %></p>
         <p>Ramal: <%= @person.branch_line %></p>
         <% if user_signed_in? %>
           <p>Codename: <%= @person.codename %></p>
-          <p><img src="<%=@person.image%>" alt="Minha Figura"></p>
         <% end %>
         
-        <p><%= link_to 'Editar', edit_person_path(@person.id), class: "btn btn-secondary"%></p>
-        
+        <p><%= link_to 'Editar', edit_person_path(@person.id), class: "btn btn-secondary"%> <%= link_to 'Voltar', :back, class: "btn btn-secondary"%></p>
       </div>
     </div>
   </div>

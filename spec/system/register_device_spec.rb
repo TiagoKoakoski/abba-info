@@ -13,7 +13,7 @@ describe 'Registra um dispositivo' do
     fill_in 'Marca', with: 'Ubiquiti'
     fill_in 'Modelo', with: 'Unifi AP-AC-Lite'
     fill_in 'IP', with: '192.168.1.89'
-    fill_in 'MacAddress', with: 'fc:ec:da:34:2e:33'
+    fill_in 'Mac Address', with: 'fc:ec:da:34:2e:33'
     fill_in 'Local', with: 'Depto Informática'
     click_on 'Salvar'
     

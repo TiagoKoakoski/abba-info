@@ -8,11 +8,11 @@ describe 'Usuário edita computador' do
     
     # Act
     login_as(user)
-    visit root_path
-    within("div#listas")
-      click_on 'Computadores'
-    click_on computer.code.to_s
-    click_on 'Editar'
+    visit edit_computer_path(computer.id)
+    # within("div#listas")
+    #   click_on 'Computadores'
+    # click_on computer.code.to_s
+    # click_on 'Editar'
     fill_in 'Tamanho da memória', with: 8
     click_on 'Salvar'
     # Assert

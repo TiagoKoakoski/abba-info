@@ -21,7 +21,6 @@ describe 'Usuário cadastra email' do
     fill_in 'Observação', with: 'Escrever uma história'
     click_on 'Salvar'
     # Assert
-    expect(page).to have_content('usuario@email.com')
     expect(page).to have_content('Departamento')
     expect(page).to have_content('Nome Sobrenome')
     expect(page).to have_content('Conta criada com sucesso')

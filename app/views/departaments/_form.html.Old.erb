@@ -1,0 +1,17 @@
+<div>
+  <%= form_with model: @departament do |d| %>
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= d.label :name,'Nome' %></span>
+      <input type="text" name="departament[name]" id="departament_name" class="form-control" placeholder="Nome" aria-label="With textarea"/>
+    </div>
+
+    <div class="input-group mt-4 mb-3">
+      <label class="input-group-text" for="inputGroupSelect01">Empresa</label>
+      <%= d.collection_select(:company_id, Company.all, :id, :fantasy_name , {class: "form-select", id: "inputGroupSelect01"})%>
+    </div>
+
+    <div class="mt-4">
+      <%= d.submit 'Salvar', class: "btn btn-secondary mt4" %>
+    </div>
+  <% end %>
+</div>

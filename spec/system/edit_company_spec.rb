@@ -16,6 +16,9 @@ describe 'Usuário edita empresa' do
     fill_in 'Senha', with: '12345678'
     click_on 'Log in'
     fill_in 'Razão Social', with: 'Comunhão Cristã Abba'
+    fill_in 'Nome Fantasia', with: 'Abba LTDA'
+    fill_in 'CNPJ', with: '2222222222'
+
     click_on 'Salvar'
     # Assert
     expect(page).to have_css('h1', text: 'Comunhão Cristã Abba')
