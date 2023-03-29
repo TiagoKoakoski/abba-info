@@ -1,43 +1,46 @@
 
 <%= form_with model: @email do |f| %>
-  <label class="ls-label col-md-3">
-    <div> 
+  <p>
+    <label class="ls-label col-md-3">
       <%= f.label :account, 'Conta:' %>
       <%= f.text_field :account %>
-    </div>
-  </label>
-  <label class="ls-label col-md-3">
-    <div> 
+    </label>
+  </p>
+  
+  <p>
+    <label class="ls-label col-md-3">
       <%= f.label :password, 'Senha:' %>
       <%= f.password_field :password %>
-    </div>
-  </label>
-  <label class="ls-label col-md-3">
+    </label>
+  </p>
+  
+  <p>
+    <label class="ls-label col-md-3">
     <%= f.label :company_id, 'Empresa' %>  
-    <div class="ls-custom-select">
       <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
-    </div>
-  </label>
-
-  <label class="ls-label col-md-3">
-    <%= f.label :departament_id, 'Departamento' %>  
-    <div class="ls-custom-select">
+    </label>
+  </p>
+  
+  <p>
+    <label class="ls-label col-md-3">
+      <%= f.label :departament_id, 'Departamento' %>  
       <%= f.collection_select(:departament_id, Departament.all, :id, :name) %>
-    </div>
-  </label>
-  <label class="ls-label col-md-3">
-    <%= f.label :person_id, 'Nome do Usuário' %>
-    <div class="ls-custom-select">
+    </label>
+  </p>
+  
+  <p>
+    <label class="ls-label col-md-3">
+      <%= f.label :person_id, 'Nome do Usuário' %>
       <%= f.collection_select(:person_id, Person.all, :id, :name) %>
-    </div>
-  </label>
+    </label>
+  </p>
 
-  <label class="ls-label col-md-3">  
-    <div>
+  <p>
+    <label class="ls-label col-md-3">  
       <%= f.label :note, 'Observação' %>
       <%= f.text_area :note %>
-    </div>
-  </label>
+    </label>
+  </p>
 
   <label class="ls-label col-md-3">
     <div class="ls-actions-btn">

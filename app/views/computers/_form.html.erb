@@ -1,133 +1,95 @@
 <%= form_with model: @computer do |f| %>
-  <label class="ls-label col-md-3">
+  <p><label class="ls-label col-md-3">
     <%= f.label :company_id, 'Empresa' %>  
-    <div class="ls-custom-select">
       <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
+  <p><label class="ls-label col-md-3">
     <%= f.label :departament_id, 'Departamento' %>  
-    <div class="ls-custom-select">
       <%= f.collection_select(:departament_id, Departament.all, :id, :name) %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
+  <p><label class="ls-label col-md-3">
     <%= f.label :person_id, 'Usuário' %>
-    <div class="ls-custom-select">
       <%= f.collection_select(:person_id, Person.all, :id, :name) %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
+  <p><label class="ls-label col-md-3">
     <%= f.label :computer_type_id, 'Tipo do computador' %>  
-    <div class="ls-custom-select">
       <%= f.collection_select(:computer_type_id, ComputerType.all, :id, :name) %>
-    </div>
-  </label>
+  </label><p>
   
-  <label class="ls-label col-md-3">
-    <div>
+  <p><label class="ls-label col-md-3">
     <%= f.label :cpu, 'CPU' %>
     <%= f.text_field :cpu %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
+  <p><label class="ls-label col-md-3">
     <%= f.label :memory_type, 'Tipo de memória' %>  
-    <div class="ls-custom-select">
       <%= f.select :memory_type, [ 'DDR3', 'DDR4'] %>
-    </div>
-  </label>
+  </label><p>
   
-  <label class="ls-label col-md-3">
-    <div>
+  <p><label class="ls-label col-md-3">
       <%= f.label :memory, 'Tamanho da memória' %>
       <%= f.number_field :memory %>
-    </div>
-  </label>
+  </label><p>
   
-  <label class="ls-label col-md-3">
-    <div>
+  <p><label class="ls-label col-md-3">
       <%= f.label :gpu, 'GPU' %>
       <%= f.text_field :gpu %>
-    </div>
-  </label>
+  </label><p>
   
-  <label class="ls-label col-md-3">
-    <div>
+  <p><label class="ls-label col-md-3">
       <%= f.label :mother_board, 'Placa Mãe' %>
       <%= f.text_field :mother_board %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
+  <p><label class="ls-label col-md-3">
     <%= f.label :storage_type, 'Tipo de armazenamento' %>  
-    <div class="ls-custom-select">
       <%= f.select :storage_type, [ 'HD', 'SSD', 'M2'] %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
-    <div>
+  <p><label class="ls-label col-md-3">
       <%= f.label :storage, 'Tamanho do armazenamento' %>
       <%= f.number_field :storage %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
-    <div>
+  <p><label class="ls-label col-md-3">
       <%= f.label :mac_address, 'Mac Address' %>
       <%= f.text_field :mac_address %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
-    <div>
+  <p><label class="ls-label col-md-3">
       <%= f.label :ip, 'IP' %>
       <%= f.text_field :ip %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
+  <p><label class="ls-label col-md-3">
     <%= f.label :operating_system_id, 'Sistema Operacional' %>
-    <div class="ls-custom-select">
       <%= f.collection_select(:operating_system_id, OperatingSystem.all, :id, :name)%>
-    </div>
-  </label>
+  </label><p>
   
-  <label class="ls-label col-md-3">
-    <div>
+  <p><label class="ls-label col-md-3">
       <%= f.label :operating_system_key, 'Sistema Operacional Key' %>
       <%= f.text_field :operating_system_key %>
-    </div>
-  </label>
+  </label><p>
   
-  <label class="ls-label col-md-3">
+  <p><label class="ls-label col-md-3">
     <b class="ls-label-text">Office</b>
-    <div class="ls-custom-select" >
       <%= f.select :office, [ 'Office 2010', 'Office 2013', 'Office 2018'], class: "ls-select" %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
-    <div>
+  <p><label class="ls-label col-md-3">
       <%= f.label :office_key, 'Office Key' %>
       <%= f.text_field :office_key %>
-    </div>
-  </label>
+  </label><p>
 
-  <label class="ls-label col-md-3">
-    <div>
+  <p><label class="ls-label col-md-3">
       <%= f.label :note, 'Observação:' %>
       <%= f.text_area :note %>
-    </div>
-  </label>
+  </label><p>
   
-  <label class="ls-label col-md-3">
-    <div class="ls-actions-btn">
+  <p><label class="ls-label col-md-3">
       <%= f.submit 'Salvar', class: "ls-btn" %>
-    </div>
-  </label>
+  </label><p>
 <% end %>
