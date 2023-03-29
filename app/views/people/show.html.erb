@@ -6,6 +6,7 @@
         <% if user_signed_in? %>
           <p>Codename: <%= @person.codename %></p>
         <% end %>
+        <p>State: <%= @person.state %></p>
         
         <p><%= link_to 'Editar', edit_person_path(@person.id), class: "btn btn-secondary"%> <%= link_to 'Voltar', :back, class: "btn btn-secondary"%></p>
       </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_28_155611) do
+ActiveRecord::Schema.define(version: 2023_03_28_182653) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 2023_03_28_155611) do
     t.string "codename"
     t.string "image"
     t.integer "number"
+    t.integer "state"
     t.index ["company_id"], name: "index_people_on_company_id"
     t.index ["departament_id"], name: "index_people_on_departament_id"
   end

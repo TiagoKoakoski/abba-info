@@ -3,6 +3,7 @@ class Person < ApplicationRecord
   belongs_to :departament
   has_many :emails
   validates :name, presence: true
+  enum state: { active: 1, inactive: 2}
 
   before_save do
     self.number = rand(1010) if self.number.blank?

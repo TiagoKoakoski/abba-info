@@ -16,6 +16,7 @@ describe 'Usuário registra pessoa no sistema' do
     fill_in 'Nome', with: 'Nome Sobrenome'
     select 'Teste', from: 'Empresa'
     select 'Departamento', from: 'Departamento'
+    select 'active', from: 'State' 
     fill_in 'Ramal', with: '1010'
     click_on 'Salvar'
     # Assert

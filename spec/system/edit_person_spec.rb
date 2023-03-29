@@ -8,13 +8,10 @@ describe 'Usuário edita pessoa no sistema' do
     
     # Act
     login_as(user)
-    visit root_path
-    within('div#listas') do
-      click_on 'Pessoas'
-    end
-    click_on 'Nome Sobrenome'
+    visit person_path(person.id)
     click_on 'Editar'
     fill_in 'Ramal', with: '2020'
+    select 'active', from: "State"
     click_on 'Salvar'
     # Assert
     expect(page).to have_content('Ramal: 2020')
