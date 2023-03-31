@@ -1,0 +1,50 @@
+
+<%= form_with model: @email do |f| %>
+  <p>
+    <label class="ls-label col-md-3">
+      <%= f.label :account, 'Conta:' %>
+      <%= f.text_field :account %>
+    </label>
+  </p>
+  
+  <p>
+    <label class="ls-label col-md-3">
+      <%= f.label :password, 'Senha:' %>
+      <%= f.password_field :password %>
+    </label>
+  </p>
+  
+  <p>
+    <label class="ls-label col-md-3">
+    <%= f.label :company_id, 'Empresa' %>  
+      <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
+    </label>
+  </p>
+  
+  <p>
+    <label class="ls-label col-md-3">
+      <%= f.label :departament_id, 'Departamento' %>  
+      <%= f.collection_select(:departament_id, Departament.all, :id, :name) %>
+    </label>
+  </p>
+  
+  <p>
+    <label class="ls-label col-md-3">
+      <%= f.label :person_id, 'Nome do Usuário' %>
+      <%= f.collection_select(:person_id, Person.all, :id, :name) %>
+    </label>
+  </p>
+
+  <p>
+    <label class="ls-label col-md-3">  
+      <%= f.label :note, 'Observação' %>
+      <%= f.text_area :note %>
+    </label>
+  </p>
+
+  <label class="ls-label col-md-3">
+    <div class="ls-actions-btn">
+      <%= f.submit 'Salvar', class: "ls-btn" %>
+    </div>
+  </label>
+<% end %>

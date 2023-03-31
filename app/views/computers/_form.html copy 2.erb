@@ -2,7 +2,7 @@
 <div>
   <%= form_with model: @computer do |f| %>
     <div class="input-group mt-4 mb-3">
-      <label class="input-group-text" for="inputGroupSelect01">Empresa</label>
+      <label class="input-group-text" for="inputGroupSelect01"><%= f.label :company_id, 'Empresa' %></label>
       <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name , {class: "form-select", id: "inputGroupSelect01"})%>
     </div>
     
@@ -13,7 +13,7 @@
     
     <div class="input-group mt-4 mb-3">
       <label class="input-group-text" for="inputGroupSelect01">Usuário</label>
-      <%= f.collection_select(:person_id, Person.all, :id, :name, {class: "form-select", id: "inputGroupSelect01"})%>
+      <%= f.collection_select(:person_id, Person.all.active, :id, :name, {class: "form-select", id: "inputGroupSelect01"})%>
     </div>
     
     <div class="input-group mt-4 mb-3">

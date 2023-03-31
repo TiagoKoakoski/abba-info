@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg bg-dark text-bg-dark link-light fs-5">
+      <div class="container-fluid">
+        <a class="navbar-brand text-bg-dark" href="/">
+        <i class="bi bi-pc-display h4 text-bg-dark"> ABBA Info</i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            <!--<li class="nav-item">
+              <a class="nav-link link-light " aria-current="page" href="/">Home</a>
+            </li>-->
+            <div id='listas'>
+              <li class="nav-item dropdown">
+                <a class="nav-link link-light dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Listar
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/companies">Empresas</a></li>
+                  <li><a class="dropdown-item" href="/departaments">Departamentos</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/people">Pessoas</a></li>
+                  <li><a class="dropdown-item" href="/emails">Emails</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/computers">Computadores</a></li>
+                  <li><a class="dropdown-item" href="/devices">Dispositivos</a></li>
+                </ul>
+              </li>
+            </div>
+            <% if user_signed_in? %>
+              <div id='cadastros'>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle link-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Cadastrar
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/companies/new">Empresas</a></li>
+                    <li><a class="dropdown-item" href="/departaments/new">Departamentos</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/people/new">Pessoas</a></li>
+                    <li><a class="dropdown-item" href="/emails/new">Emails</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/computers/new">Computadores</a></li>
+                    <li><a class="dropdown-item" href="/devices/new">Dispositivos</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="/computer_types/new">Tipo de computador</a></li>
+                    <li><a class="dropdown-item" href="/operating_systems/new">S.O.</a></li>
+                  </ul>
+                </li>
+              </div>
+            <%end%>
+          </ul>
+          <%# <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form> %>
+          <% if user_signed_in? %>
+            <span class="link-light"><%= current_user.email %> 
+              <i class="bi bi-person-circle link-light"></i>
+            </span>
+          <% else %>
+            <a href="/users/sign_in">
+              <i class="bi bi-person-circle link-danger"></i>
+            </a>
+          <% end %>
+        </div>
+      </div>
+    </nav>

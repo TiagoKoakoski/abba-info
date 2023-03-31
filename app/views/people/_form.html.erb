@@ -1,40 +1,46 @@
 <%= form_with model: @person do |f| %>
+ 
   <p>
-    <label class="ls-label">
-      <%= f.label :name, 'Nome' %>
-      <%= f.text_field :name, placeholder: "Nome completo" %>
-    </label>
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :name,'Nome' %></span>
+      <!--<%= f.text_field :name%>-->
+      <input type="text" name="person[name]" id="person_name" class="form-control" placeholder="<%= @person.name || "Digite o nome completo"%>" aria-label="With textarea"/>
+    </div>
   </p>
 
   <p>
-    <label class="ls-label">
-        <%= f.label :company_id, 'Empresa' %>
-        <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
-    </label>
-  </p>
-
-  <p>
-    <label class="ls-label">
-      <%= f.label :departament_id, 'Departamento' %>
-      <%= f.collection_select(:departament_id, Departament.all, :id, :name) %>
-    </label>
+    <div class="ls-label input-group mb-3">
+      <label class="input-group-text"><%= f.label :company_id, 'Empresa' %></label>
+      <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
+    </div>
   </p>
   
   <p>
-    <label class="ls-label">
-      <%= f.label :branch_line, 'Ramal' %>
-      <%= f.text_field :branch_line, placeholder: "30XX" %>
-    </label>
+    <div class="ls-label input-group mb-3">
+      <label class="input-group-text"><%= f.label :departament_id, 'Departamento' %></label>
+      <%= f.collection_select(:departament_id, Departament.all, :id, :name) %>
+    </div>
   </p>
 
   <p>
-    <label class="ls-label">
-      <%= f.label :state %>
-      <%= f.select :state, Person.states.keys, selected: @person.state || "active" %>
-    </label>
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= f.label :branch_line, 'Ramal' %></span>
+      <input type="text" name="person[branch_line]" id="person_branch_line" class="form-control" placeholder="<%= @person.branch_line || "30XX"%>" aria-label="With textarea"/>
+    </div>
   </p>
 
-  <div class="ls-actions-btn">
-    <%= f.submit 'Salvar', class: 'ls-btn' %>
-  </div>
+  <p>
+    <div class="input-group mb-3">
+      <label class="input-group-text"><%= f.label :state %></label>
+      <%= f.select :state, Person.states.keys, selected: @person.state || "active" %>
+    </div>
+  </p>
+
+  <p>
+    <div class="ls-actions-btn">
+      <%= f.submit 'Salvar', class: 'btn btn-secondary' %> <%= link_to 'Voltar', :back, class: "btn btn-secondary"%>
+    </div>
+  </p>
+
+
 <% end %>

@@ -3,52 +3,52 @@
   <%= form_with model: @company do |f| %>
     <div class="input-group mt-4">
       <span class="input-group-text"><%= f.label :name,'Razão Social' %></span>
-      <input type="text" name="company[name]" id="company_name" class="form-control" placeholder="Razão social" aria-label="With textarea"/>
+      <input type="text" name="company[name]" id="company_name" class="form-control" placeholder="<%= @company.name || "Razão social"%>" aria-label="With textarea"/>
     </div>
     
     <div class="input-group mt-4">
       <span class="input-group-text"><%= f.label :fantasy_name,'Nome Fantasia' %></span>
-      <input type="text" name="company[fantasy_name]" id="company_fantasy_name" class="form-control" placeholder="Nome Fantasia" aria-label="With textarea"/>
+      <input type="text" name="company[fantasy_name]" id="company_fantasy_name" class="form-control" placeholder="<%= @company.fantasy_name || "Nome Fantasia"%>" aria-label="With textarea"/>
     </div>
 
     <div class="input-group mt-4">
       <span class="input-group-text"><%= f.label :registration_number,'CNPJ' %></span>
-      <input type="text" name="company[registration_number]" id="company_registration_number" class="form-control" placeholder="CNPJ" aria-label="With textarea"/>
+      <input type="text" name="company[registration_number]" id="company_registration_number" class="form-control" placeholder="<%= @company.registration_number || "CNPJ"%>" aria-label="With textarea"/>
     </div>
 
     <div class="input-group mt-4">
       <span class="input-group-text"><%= f.label :postal_code,'CEP' %></span>
-      <input type="text" name="company[postal_code]" id="company_postal_code" class="form-control" placeholder="CEP" aria-label="With textarea"/>
+      <input type="text" name="company[postal_code]" id="company_postal_code" class="form-control" placeholder="<%= @company.postal_code || "CEP"%>" aria-label="With textarea"/>
     </div>
 
     <div class="input-group mt-4">
       <span class="input-group-text"><%= f.label :address,'Endereço' %></span>
-      <input type="text" name="company[address]" id="company_address" class="form-control" placeholder="Endereço" aria-label="With textarea"/>
+      <input type="text" name="company[address]" id="company_address" class="form-control" placeholder="<%= @company.address || "Endereço"%>" aria-label="With textarea"/>
     </div>
 
     <div class="input-group mt-4">
       <span class="input-group-text"><%= f.label :district,'Bairro' %></span>
-      <input type="text" name="company[district]" id="company_district" class="form-control" placeholder="Bairro" aria-label="With textarea"/>
+      <input type="text" name="company[district]" id="company_district" class="form-control" placeholder="<%= @company.district || "Bairro"%>" aria-label="With textarea"/>
     </div>
 
     <div class="input-group mt-4">
       <span class="input-group-text"><%= f.label :city, 'Cidade' %></span>
-      <input type="text" name="company[city]" id="company_city" class="form-control" placeholder="Cidade" aria-label="With textarea"/>
+      <input type="text" name="company[city]" id="company_city" class="form-control" placeholder="<%= @company.city || "Cidade"%>" aria-label="With textarea"/>
     </div>
 
     <div class="input-group mt-4">
       <span class="input-group-text"><%= f.label :state, 'Estado' %></span>
-      <input type="text" name="company[state]" id="company_state" class="form-control" placeholder="Estado" aria-label="With textarea"/>
+      <input type="text" name="company[state]" id="company_state" class="form-control" placeholder="<%= @company.state || "Estado"%>" aria-label="With textarea"/>
     </div>
 
     <div class="input-group mt-4">
       <span class="input-group-text"><%= f.label :fone_number, 'Telefone' %></span>
-      <input type="text" name="company[fone_number]" id="company_fone_number" class="form-control" placeholder="(00) 0000-0000" aria-label="With textarea"/>
+      <input type="text" name="company[fone_number]" id="company_fone_number" class="form-control" placeholder="<%= @company.fone_number || "(00) 0000-0000"%>" aria-label="With textarea"/>
     </div>
 
 
     <div class="mt-4">
-      <%= f.submit 'Salvar', class: "btn btn-secondary mt4" %>
+      <%= f.submit 'Salvar', class: "btn btn-secondary mt4" %> <%= link_to 'Voltar', :back, class: "btn btn-secondary"%>
     </div>
   <% end %>
 </div>

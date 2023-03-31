@@ -1,4 +1,4 @@
-<h1>Bem vindo</h1>
+<h1 class="text-center">Bem vindo</h1>
 
 <div class="ls-box ls-board-box">
   <header class="ls-info-header">
@@ -9,65 +9,63 @@
     <div class="col-sm-6 col-md-3">
       <div class="ls-box">
         <div class="ls-box-head">
-          <h6 class="ls-title-4">Pessoas</h6>
+          <h3><i class="bi bi-people"></i></h3><h6>Pessoas</h6>
         </div>
         <div class="ls-box-body">
           <strong><%= @people.count %></strong>
           <small>Cadastradas</small>
         </div>
         <div class="ls-box-footer">
-          <a href="/people" aria-label="Listar pessoas" class="ls-btn ls-btn-sm" title="Listar pessoas cadastradas">Listar pessoas</a>
+          <a href="/people" aria-label="Listar pessoas" class="btn btn-secondary" title="Listar pessoas cadastradas">Listar pessoas</a>
         </div>
       </div>
     </div>
     <div class="col-sm-6 col-md-3">
       <div class="ls-box">
         <div class="ls-box-head">
-          <h6 class="ls-title-4">E-mails</h6>
+          <h3><i class="bi bi-envelope-at"></i></h3><h6> E-mails</h6>
         </div>
         <div class="ls-box-body">
           <strong><%= @emails.count %></strong>
           <small>Cadastrados</small>
         </div>
         <div class="ls-box-footer">
-          <a href="/emails" aria-label="Listar e-mails" class="ls-btn ls-btn-sm" title="Listar e-mails">Listar e-mails</a>
+          <a href="/emails" aria-label="Listar e-mails" class="btn btn-secondary" title="Listar e-mails">Listar e-mails</a>
         </div>
       </div>
     </div>
     <div class="col-sm-6 col-md-3">
       <div class="ls-box">
         <div class="ls-box-head">
-          <h6 class="ls-title-4">Computadores</h6>
+          <h3><i class="bi bi-pc-display-horizontal"></i></h3><h6> Computadores</h6>
         </div>
         <div class="ls-box-body">
           <strong><%= @computers.count %></strong>
           <small>Cadastrados</small>
         </div>
         <div class="ls-box-footer">
-          <a href="/computers" aria-label="Listar computadores" class="ls-btn ls-btn-sm" title="Listar computadores">Listar computadores</a>
+          <a href="/computers" aria-label="Listar computadores" class="btn btn-secondary" title="Listar computadores">Listar computadores</a>
         </div>
       </div>
     </div>
     <div class="col-sm-6 col-md-3">
       <div class="ls-box">
         <div class="ls-box-head">
-          <h6 class="ls-title-4">DATA</h6>
+          <h3><i class="bi bi-calendar4-week"></i></h3>
         </div>
         <div class="ls-box-body">
           <div class="col-xs-6">
-            <strong><%= @date.strftime("%d") %></strong>
-            <small>dia</small>
+            <strong><%= @date.strftime("%d") %>/<%= @date.strftime("%m") %></strong>
           </div>
           <div class="col-xs-6">
-            <strong><%= @date.strftime("%m") %></strong>
-            <small>mês</small>
+            <strong>20<%= @date.strftime("%y") %></strong>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
+<br><br>
 <% if user_signed_in? %>
   <div class="ls-box ls-board-box">
     <header class="ls-info-header">
@@ -78,70 +76,70 @@
       <div class="col-sm-6 col-md-3">
         <div class="ls-box">
           <div class="ls-box-head">
-            <h6 class="ls-title-4">Empresas</h6>
+            <h3><i class="bi bi-person-gear"></i></h3> <h6>Usuários</h6>
           </div>
           <div class="ls-box-body">
-            <strong><%= @companies.count %></strong>
-            <small>cadastradas</small>
+            <strong><%= @users.count %></strong>
+            <small>cadastrados</small>
           </div>
           <div class="ls-box-footer">
-            <a href="/companies" aria-label="Empresa" class="ls-btn ls-btn-sm" title="Listar empresas">Listar empresas</a>
+            <!--<a href="/companies" aria-label="Empresa" class="btn btn-secondary" title="Listar empresas">Listar empresas</a>-->
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="ls-box">
           <div class="ls-box-head">
-            <h6 class="ls-title-4">Departamentos</h6>
+            <h3><i class="bi bi-gear"></i></h3> <h6>Departamentos</h6>
           </div>
           <div class="ls-box-body">
             <strong><%= @departaments.count %></strong>
             <small>Cadastrados</small>
           </div>
           <div class="ls-box-footer">
-            <a href="/departaments" aria-label="Departamentos" class="ls-btn ls-btn-sm" title="Listar departamentos">Listar departamentos</a>
+            <a href="/departaments" aria-label="Departamentos" class="btn btn-secondary" title="Listar departamentos">Listar departamentos</a>
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
-        <div class="ls-box">
+        <div class="box">
           <div class="ls-box-head">
-            <h6 class="ls-title-4">WIFI</h6>
+            <h3><i class="bi bi-wifi"></i></h3>
           </div>
           <div class="ls-box-body">
             <div class="col-xs-6">
-              <strong>ABBA</strong>
-              <small>82467391</small>
+              <strong>CCAbba </strong>
+              <small>cc8246139</small>
             </div>
             <div class="col-xs-6">
-              <strong>CA</strong>
-              <small>19aCa_Reino</small>
+              <strong>CCA</strong>
+              <small>2023cca80</small>
             </div>
           </div>
           <div class="ls-box-footer">
-            <a href="https://192.168.1.175:8443" aria-label="Nova senha" class="ls-btn ls-btn-sm" title="Gerar novas senhas">Gerenciador</a>
+            <a href="https://192.168.1.175:8443" aria-label="Nova senha" class="btn btn-secondary" title="Gerar novas senhas">Gerenciador</a>
           </div>
         </div>
       </div>
       <div class="col-sm-6 col-md-3">
         <div class="ls-box">
           <div class="ls-box-head">
-            <h6 class="ls-title-4">Senhas portas</h6>
+            <h3><i class="bi bi-door-closed"></i></h3>
           </div>
           <% if @password_door != nil %>
             <div class="ls-box-body">
-              <div class="col-xs-6">
+              <div >
                 <strong><%= @password_door.top %></strong>
-                <small>Top</small>
+                <i class="bi bi-arrow-up"></i>
               </div>
               <div class="col-xs-6">
                 <strong><%= @password_door.bottom %></strong>
-                <small>Bottom</small>
+                <i class="bi bi-arrow-down"></i>
               </div>
             </div>
           <% end %>
           <div class="ls-box-footer">
-            <a href="/password_doors/new" aria-label="Nova senha" class="ls-btn ls-btn-sm" title="Gerar novas senhas">Gerar nova senha</a>
+            <a href="/password_doors/new" aria-label="Nova senha" class="btn btn-secondary" title="Gerar novas senhas">Gerar nova senha</a>
           </div>
         </div>
       </div>

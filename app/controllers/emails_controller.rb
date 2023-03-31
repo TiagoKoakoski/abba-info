@@ -11,7 +11,7 @@ class EmailsController < ApplicationController
       redirect_to emails_path
     else
       flash[:alert] = 'Conta não pode ser criada'
-      render :new
+      redirect_to emails_path
     end
   end
 
@@ -34,7 +34,7 @@ class EmailsController < ApplicationController
       redirect_to emails_path
     else
       flash[:alert] = 'Conta não pode ser atualizada'
-      render :edit
+      redirect_to emails_path
     end
   end
 end

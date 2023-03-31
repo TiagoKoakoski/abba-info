@@ -1,0 +1,95 @@
+<%= form_with model: @computer do |f| %>
+  <p><label class="ls-label col-md-3">
+    <%= f.label :company_id, 'Empresa' %>  
+      <%= f.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+    <%= f.label :departament_id, 'Departamento' %>  
+      <%= f.collection_select(:departament_id, Departament.all, :id, :name) %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+    <%= f.label :person_id, 'Usuário' %>
+      <%= f.collection_select(:person_id, Person.all, :id, :name) %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+    <%= f.label :computer_type_id, 'Tipo do computador' %>  
+      <%= f.collection_select(:computer_type_id, ComputerType.all, :id, :name) %>
+  </label><p>
+  
+  <p><label class="ls-label col-md-3">
+    <%= f.label :cpu, 'CPU' %>
+    <%= f.text_field :cpu %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+    <%= f.label :memory_type, 'Tipo de memória' %>  
+      <%= f.select :memory_type, [ 'DDR3', 'DDR4'] %>
+  </label><p>
+  
+  <p><label class="ls-label col-md-3">
+      <%= f.label :memory, 'Tamanho da memória' %>
+      <%= f.number_field :memory %>
+  </label><p>
+  
+  <p><label class="ls-label col-md-3">
+      <%= f.label :gpu, 'GPU' %>
+      <%= f.text_field :gpu %>
+  </label><p>
+  
+  <p><label class="ls-label col-md-3">
+      <%= f.label :mother_board, 'Placa Mãe' %>
+      <%= f.text_field :mother_board %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+    <%= f.label :storage_type, 'Tipo de armazenamento' %>  
+      <%= f.select :storage_type, [ 'HD', 'SSD', 'M2'] %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+      <%= f.label :storage, 'Tamanho do armazenamento' %>
+      <%= f.number_field :storage %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+      <%= f.label :mac_address, 'Mac Address' %>
+      <%= f.text_field :mac_address %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+      <%= f.label :ip, 'IP' %>
+      <%= f.text_field :ip %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+    <%= f.label :operating_system_id, 'Sistema Operacional' %>
+      <%= f.collection_select(:operating_system_id, OperatingSystem.all, :id, :name)%>
+  </label><p>
+  
+  <p><label class="ls-label col-md-3">
+      <%= f.label :operating_system_key, 'Sistema Operacional Key' %>
+      <%= f.text_field :operating_system_key %>
+  </label><p>
+  
+  <p><label class="ls-label col-md-3">
+    <b class="ls-label-text">Office</b>
+      <%= f.select :office, [ 'Office 2010', 'Office 2013', 'Office 2018'], class: "ls-select" %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+      <%= f.label :office_key, 'Office Key' %>
+      <%= f.text_field :office_key %>
+  </label><p>
+
+  <p><label class="ls-label col-md-3">
+      <%= f.label :note, 'Observação:' %>
+      <%= f.text_area :note %>
+  </label><p>
+  
+  <p><label class="ls-label col-md-3">
+      <%= f.submit 'Salvar', class: "ls-btn" %>
+  </label><p>
+<% end %>

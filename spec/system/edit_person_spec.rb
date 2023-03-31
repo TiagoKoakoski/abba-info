@@ -10,6 +10,7 @@ describe 'Usuário edita pessoa no sistema' do
     login_as(user)
     visit person_path(person.id)
     click_on 'Editar'
+    fill_in 'Nome', with: 'Joaozinho'
     fill_in 'Ramal', with: '2020'
     select 'active', from: "State"
     click_on 'Salvar'

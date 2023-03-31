@@ -7,5 +7,6 @@ class HomeController < ApplicationController
     @password_door = PasswordDoor.last
     @companies = Company.all
     @departaments = Departament.all
+    @users = User.all
   end
 end

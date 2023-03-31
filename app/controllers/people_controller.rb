@@ -22,7 +22,7 @@ class PeopleController < ApplicationController
   end
 
   def index
-    @people = Person.where('name like ?', "%#{params[:q]}%").active
+    @people = Person.where('name like ?', "%#{params[:q]}%")
   end
 
   def edit

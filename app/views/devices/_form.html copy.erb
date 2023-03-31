@@ -1,0 +1,49 @@
+<%= form_with(model: @device) do |f| %>
+  <p><label class="ls-label col-md-3">
+    
+      <%= f.label :name, 'Nome' %>
+      <%= f.text_field :name %>
+    
+  </label><p>
+  <p><label class="ls-label col-md-3">
+    
+      <%= f.label :brand, 'Marca' %>
+      <%= f.text_field :brand %>
+    
+  </label><p>
+  <p><label class="ls-label col-md-3">
+    
+      <%= f.label :model, 'Modelo' %>
+      <%= f.text_field :model %>
+    
+  </label><p>
+  <p><label class="ls-label col-md-3">
+    
+      <%= f.label :ip, 'IP' %>
+      <%= f.text_field :ip %>
+    
+  </label><p>
+  <p><label class="ls-label col-md-3">
+    
+      <%= f.label :mac_address, 'Mac Address' %>
+      <%= f.text_field :mac_address %>
+    
+  </label><p>
+  <p><label class="ls-label col-md-3">
+    
+      <%= f.label :place, 'Local' %>
+      <%= f.text_field :place %>
+    
+  </label><p>
+  <p><label class="ls-label col-md-3">
+    
+      <%= f.label :note, 'Observação' %>
+      <%= f.text_area :note %>
+    
+  </label><p>
+  <p><label class="ls-label col-md-3">
+    <div class="ls-actions-btn">
+      <%= f.submit 'Salvar', class: "ls-btn" %>
+    
+  </label><p>
+<% end %>

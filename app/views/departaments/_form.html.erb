@@ -1,21 +1,20 @@
 <%= form_with model: @departament do |d| %>
   <p>
-    <label class="ls-label">  
-      <%= d.label :name, 'Nome' %>
-      <%= d.text_field :name %>
-    </label>
-  </p>
-  
-  <p>
-    <label class="ls-label">
-      <%= d.label :company_id, 'Empresa' %>
-      <%= d.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
-    </label>
+    <div class="input-group mt-4">
+      <span class="input-group-text"><%= d.label :name,'Nome' %></span>
+      <input type="text" name="departament[name]" id="departament_name" class="form-control" placeholder="<%= @departament.name || "Digite o nome do departamentoNome"%>" aria-label="With textarea"/>
+    </div>
   </p>
 
-  <label class="ls-label">
-    <div class="ls-custom-btn">
-      <%= d.submit 'Salvar', class:"ls-btn" %>
+  <p>
+    <div class="ls-label input-group mb-3">
+      <label class="input-group-text"><%= d.label :company_id, 'Empresa' %></label>
+      <%= d.collection_select(:company_id, Company.all, :id, :fantasy_name) %>
     </div>
-  </label>
+  </p>
+
+  <div class="mt-4">
+    <%= d.submit 'Salvar', class: "btn btn-secondary mt4" %> <%= link_to 'Voltar', :back, class: "btn btn-secondary"%>
+  </div>
+
 <% end %>
